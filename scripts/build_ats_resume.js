@@ -16,7 +16,7 @@ const resumeHtml = `<!DOCTYPE html>
 <style>
   @page {
     size: letter;
-    margin: 0.42in 0.48in;
+    margin: 0.38in 0.44in;
   }
   * {
     box-sizing: border-box;
@@ -29,21 +29,21 @@ const resumeHtml = `<!DOCTYPE html>
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #111827;
     background: #ffffff;
-    font-size: 9.3pt;
-    line-height: 1.34;
+    font-size: 9.1pt;
+    line-height: 1.32;
   }
   a {
-    color: #111827;
+    color: #1d4ed8;
     text-decoration: none;
   }
   .header {
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     border-bottom: 1.5px solid #111827;
-    padding-bottom: 6px;
+    padding-bottom: 5px;
   }
   .header h1 {
-    font-size: 20pt;
+    font-size: 19.5pt;
     font-weight: 800;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -51,19 +51,19 @@ const resumeHtml = `<!DOCTYPE html>
     margin-bottom: 2px;
   }
   .header .title-sub {
-    font-size: 9.8pt;
+    font-size: 9.6pt;
     font-weight: 600;
     color: #1f2937;
     letter-spacing: 0.02em;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .contact-bar {
-    font-size: 8.8pt;
+    font-size: 8.6pt;
     color: #374151;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 7px;
   }
   .contact-bar span {
     display: inline-flex;
@@ -74,35 +74,35 @@ const resumeHtml = `<!DOCTYPE html>
   }
 
   .section {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
   }
   .section-title {
-    font-size: 10.2pt;
+    font-size: 10pt;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #000000;
     border-bottom: 1px solid #1f2937;
     padding-bottom: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   .entry {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     page-break-inside: avoid;
   }
   .entry-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 9.4pt;
+    font-size: 9.3pt;
   }
   .entry-title {
     font-weight: 700;
     color: #000000;
   }
   .entry-meta {
-    font-size: 8.6pt;
+    font-size: 8.5pt;
     color: #374151;
     font-weight: 600;
     text-align: right;
@@ -111,19 +111,19 @@ const resumeHtml = `<!DOCTYPE html>
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 8.8pt;
+    font-size: 8.7pt;
     font-style: italic;
     color: #374151;
     margin-bottom: 2px;
   }
 
   ul.bullets {
-    margin-left: 15px;
+    margin-left: 14px;
     margin-top: 2px;
   }
   ul.bullets li {
-    font-size: 8.9pt;
-    line-height: 1.33;
+    font-size: 8.8pt;
+    line-height: 1.31;
     color: #1f2937;
     margin-bottom: 1.5px;
   }
@@ -135,7 +135,7 @@ const resumeHtml = `<!DOCTYPE html>
   .skills-grid {
     display: table;
     width: 100%;
-    font-size: 8.9pt;
+    font-size: 8.8pt;
   }
   .skills-row {
     display: table-row;
@@ -155,13 +155,6 @@ const resumeHtml = `<!DOCTYPE html>
     vertical-align: top;
   }
 
-  .cert-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 8.8pt;
-    margin-bottom: 2px;
-  }
-
   .page-break {
     page-break-after: always;
     break-after: page;
@@ -175,7 +168,7 @@ const resumeHtml = `<!DOCTYPE html>
   <!-- HEADER / CONTACT INFO (ATS STANDARD) -->
   <header class="header">
     <h1>ABAID ULLAH BHATTI</h1>
-    <div class="title-sub">Software Engineer • Full-Stack Developer • Systems & Backend Lead</div>
+    <div class="title-sub">Software Engineer • Full-Stack Developer • Backend & Systems Specialist</div>
     <div class="contact-bar">
       <span>Lahore, Pakistan</span>
       <span class="sep">|</span>
@@ -202,7 +195,7 @@ const resumeHtml = `<!DOCTYPE html>
         <span>2023 – 2027</span>
       </div>
       <ul class="bullets">
-        <li><strong>Honors & Awards:</strong> Awarded Government Merit-Based Academic Scholarship (2020 – 2025).</li>
+        <li><strong>Academic Scholarship:</strong> Awarded Government Merit-Based Academic Scholarship (2020 – 2025).</li>
         <li><strong>Core Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming, Database Systems, Operating Systems, Computer Networks, Software Engineering, Theory of Automata, Compiler Construction.</li>
       </ul>
     </div>
@@ -222,24 +215,51 @@ const resumeHtml = `<!DOCTYPE html>
       </div>
       <div class="skills-row">
         <div class="skills-label">Backend & APIs:</div>
-        <div class="skills-val">Node.js, Express.js, ASP.NET Core, RESTful APIs, JWT, Role-Based Access Control (RBAC), Middleware</div>
+        <div class="skills-val">Node.js, Express.js, ASP.NET Core, RESTful APIs, JWT, Role-Based Access Control (RBAC), Socket.IO, Kafka</div>
       </div>
       <div class="skills-row">
         <div class="skills-label">Databases & Cloud:</div>
-        <div class="skills-val">PostgreSQL, MongoDB (Atlas/Mongoose), SQL Server, Redis, Supabase, Cloudinary, Docker</div>
+        <div class="skills-val">PostgreSQL, Prisma ORM, MongoDB (Atlas/Mongoose), SQL Server, Redis, Supabase, Cloudinary, Docker</div>
       </div>
       <div class="skills-row">
         <div class="skills-label">Tools & Testing:</div>
-        <div class="skills-val">Git, GitHub, Docker, Postman, Jest (58+ suites), Vitest, Supertest, Linux / Bash, CI/CD, Markdown</div>
+        <div class="skills-val">Git, GitHub, Docker, Postman, Newman, Jest (58+ suites), Vitest, Supertest, Linux / Bash, CI/CD, Markdown</div>
       </div>
       <div class="skills-row">
         <div class="skills-label">Engineering Focus:</div>
-        <div class="skills-val">AST Compilers, Database Benchmarking, Concurrency Transactions, Stripe Payment Integration</div>
+        <div class="skills-val">Event-Driven Architecture, High-Concurrency DB Locks, AST Compilers, Stripe Payment Pipelines</div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED ENGINEERING PROJECTS -->
+  <!-- WORK EXPERIENCE -->
+  <section class="section">
+    <div class="section-title">Work Experience</div>
+
+    <!-- EXPERIENCE 1: QUAID VENTURES -->
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Software Engineering Intern — Quaid Ventures</span>
+        <span class="entry-meta">June 2026 – August 2026</span>
+      </div>
+      <div class="entry-sub">
+        <span>Backend & Full-Stack Engineering • Verified Experience Letter</span>
+        <span>
+          <a href="https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/quaid-ventures-experience-letter.png" target="_blank">[Verified Letter on GitHub ↗]</a>
+        </span>
+      </div>
+      <ul class="bullets">
+        <li>Conducted targeted debugging and QA on <strong>Shipr</strong>, the company's flagship platform, resolving complex AI-related bugs to improve system reliability and data accuracy.</li>
+        <li>Built an event-driven, asynchronous backend task system using <strong>Apache Kafka</strong> for background processing and <strong>Redis</strong> for real-time analytics, caching, and granular role-based access control (RBAC).</li>
+        <li>Engineered a high-concurrency <strong>Inventory Management System</strong> using <strong>PostgreSQL</strong> and <strong>Prisma</strong>, applying row-level locks and atomic transactions to eliminate race conditions and overselling.</li>
+        <li>Developed <strong>Shop.co</strong>, a production-ready full-stack clothing commerce application with React, Redux, Axios, Stripe checkout transactions, and MongoDB analytics.</li>
+        <li>Architected a modular backend for an <strong>Enterprise HR Portal</strong> spanning 19 business domains (workforce management, leave workflows, attendance, and payroll).</li>
+        <li>Built a full-duplex real-time chat and messaging engine using <strong>Socket.IO</strong> and <strong>Kafka</strong>, enabling JWT-authenticated private and group messaging.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FLAGSHIP PROJECTS (PART 1) -->
   <section class="section">
     <div class="section-title">Flagship Engineering Projects</div>
 
@@ -260,6 +280,16 @@ const resumeHtml = `<!DOCTYPE html>
         <li>Built an automated golden-PDF visual regression testing harness in CI, verifying pixel-perfect diff rendering across IEEE, Springer, and thesis templates.</li>
       </ul>
     </div>
+  </section>
+
+  <!-- Clean Page Break for ATS 2-Page Standard -->
+  <div class="page-break"></div>
+
+  <!-- ================= PAGE 2 ================= -->
+
+  <!-- PROJECTS (CONTINUED) -->
+  <section class="section">
+    <div class="section-title">Key Engineering Projects (Continued)</div>
 
     <!-- PROJECT 2: SHOP.CO -->
     <div class="entry">
@@ -272,10 +302,10 @@ const resumeHtml = `<!DOCTYPE html>
         <span>2024</span>
       </div>
       <ul class="bullets">
-        <li>Engineered a production-ready, fully-typed clothing commerce application with strict RBAC authorization and JWT authentication featuring access/refresh token rotation.</li>
+        <li>Engineered a production-ready, fully-typed clothing commerce application with strict RBAC authorization and JWT authentication with access/refresh token rotation.</li>
         <li>Implemented unified shopping cart persistence supporting guest UUID sessions and automatic cart merging upon user authentication.</li>
         <li>Leveraged atomic MongoDB transactions to guarantee inventory consistency during concurrent multi-item checkouts and Stripe webhook fulfillment.</li>
-        <li>Built an admin analytics dashboard with MongoDB native aggregation pipelines tracking revenue, product velocity, and customer cohort metrics.</li>
+        <li>Built an admin analytics dashboard with native MongoDB aggregation pipelines tracking revenue, product velocity, and customer cohort metrics.</li>
       </ul>
     </div>
 
@@ -292,19 +322,8 @@ const resumeHtml = `<!DOCTYPE html>
       <ul class="bullets">
         <li>Developed a responsive template registry featuring dual-pane split view, real-time multi-token search (tag:, kind:), and a 10-theme CSS design system.</li>
         <li>Integrated Supabase PostgreSQL database with schema migration pipelines and built administrative moderation controls for submissions.</li>
-        <li>Configured dual-deployment pipelines: static catalog export for GitHub Pages and production Docker web service on Render.</li>
       </ul>
     </div>
-  </section>
-
-  <!-- Clean Page Break for ATS 2-Page Standard -->
-  <div class="page-break"></div>
-
-  <!-- ================= PAGE 2 ================= -->
-
-  <!-- PROJECTS (CONTINUED) -->
-  <section class="section">
-    <div class="section-title">Engineering Projects (Continued)</div>
 
     <!-- PROJECT 4: CROSS-DB BENCHMARK -->
     <div class="entry">
@@ -319,7 +338,6 @@ const resumeHtml = `<!DOCTYPE html>
       <ul class="bullets">
         <li>Engineered an automated Python benchmarking framework measuring throughput and latency for CRUD, multi-table JOINs, and complex aggregation operations.</li>
         <li>Benchmarked SQL Server, PostgreSQL, MongoDB Atlas, and Redis under concurrent workloads, analyzing index optimization and query execution plans.</li>
-        <li>Generated comparative visualization reports identifying performance sweet spots for relational vs. document vs. key-value storage paradigms.</li>
       </ul>
     </div>
 
@@ -335,58 +353,25 @@ const resumeHtml = `<!DOCTYPE html>
       </div>
       <ul class="bullets">
         <li>Built an administrative attendance tracking platform with role-based access for faculty and administrators, daily attendance logging, and CSV exports.</li>
-        <li>Engineered responsive interfaces with Tailwind CSS and integrated Supabase authentication with Row-Level Security (RLS) policies.</li>
-      </ul>
-    </div>
-
-    <!-- PROJECT 6: CYBER RECONNAISSANCE -->
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Secure Cyber Reconnaissance Framework</span>
-        <span class="entry-meta">Python, Network Sockets, Information Security</span>
-      </div>
-      <div class="entry-sub">
-        <span>Lead Security Researcher</span>
-        <span>2024</span>
-      </div>
-      <ul class="bullets">
-        <li>Developed an early-warning reconnaissance framework mapping attack surfaces and identifying vulnerabilities in simulated enterprise networks using passive intelligence techniques.</li>
-        <li>Reduced simulated threat vectors by over 30% through automated port auditing and misconfiguration discovery routines.</li>
-      </ul>
-    </div>
-
-    <!-- PROJECT 7: MASM32 CHESS -->
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Graphical Chess Game in MASM32 Assembly</span>
-        <span class="entry-meta">x86 Assembly, MASM32 SDK, Windows API</span>
-      </div>
-      <div class="entry-sub">
-        <span>Low-Level Systems Developer</span>
-        <span>2023</span>
-      </div>
-      <ul class="bullets">
-        <li>Implemented full chess rule verification and graphical board rendering using low-level Win32 GDI pixel manipulation and direct register allocation.</li>
-        <li>Optimized memory footprint and CPU register usage to achieve zero-latency move validation in constrained 32-bit execution environments.</li>
       </ul>
     </div>
   </section>
 
   <!-- EXPERIENCE & LEADERSHIP -->
   <section class="section">
-    <div class="section-title">Professional Experience & Leadership</div>
+    <div class="section-title">Open-Source & Leadership Experience</div>
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">Solo Full-Stack Engineer / Open-Source Contributor</span>
         <span class="entry-meta">Remote / Lahore, Pakistan</span>
       </div>
       <div class="entry-sub">
-        <span>Independent Software Development</span>
+        <span>Independent Software Development (11 Repositories on GitHub)</span>
         <span>2024 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Architected and deployed 11 open-source software engineering repositories spanning full-stack web platforms, compiler toolchains, cybersecurity scanners, and low-level systems.</li>
-        <li>Engineered production-grade security architectures including JWT authentication, rate limiting, helmet security headers, and comprehensive unit/integration test coverage with Jest.</li>
+        <li>Architected and deployed 11 open-source repositories spanning full-stack web platforms, compiler toolchains, cybersecurity scanners, and low-level systems.</li>
+        <li>Engineered production-grade security architectures including JWT authentication, rate limiting, helmet headers, and comprehensive unit/integration test suites with Jest.</li>
       </ul>
     </div>
     <div class="entry">
@@ -400,15 +385,16 @@ const resumeHtml = `<!DOCTYPE html>
       </div>
       <ul class="bullets">
         <li>Coordinated collegiate technical workshops, coding bootcamps, and hackathons for 300+ computer science students.</li>
-        <li>Mentored junior undergraduates in introductory programming, version control workflows with Git, and data structures problem solving.</li>
       </ul>
     </div>
   </section>
 
-  <!-- TECHNICAL CERTIFICATIONS & COURSEWORK -->
+  <!-- TECHNICAL CERTIFICATIONS & VERIFIED CREDENTIALS -->
   <section class="section">
-    <div class="section-title">Technical Certifications & Coursework</div>
+    <div class="section-title">Verified Certifications & Technical Credentials</div>
     <ul class="bullets">
+      <li><strong>Generative AI Application Developer (Pak Angels, Silicon Valley, CA):</strong> Awarded <em>Top Performer</em> in GenAI training (June–July 2025). Certificate ID: <code>322056cbc677032d</code>. <a href="https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/pak-angels-genai-certificate.jpg" target="_blank">[Verified Credential on GitHub ↗]</a></li>
+      <li><strong>IT Department Internship Certificate (Tracking):</strong> Completed 2-month professional software engineering internship (August 2026). <a href="https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/tracking-internship-certificate.png" target="_blank">[Verified Certificate on GitHub ↗]</a></li>
       <li><strong>Full-Stack Web Development:</strong> Comprehensive single-page application architectures, Next.js / React, and RESTful Express APIs (2024).</li>
       <li><strong>Relational Databases & SQL:</strong> Advanced query optimization, schema normalization (1NF–BCNF), and ACID transactions (2024).</li>
       <li><strong>Python Programming & Scripting:</strong> Object-oriented design, systems automation, and data pipeline scripting (2024).</li>

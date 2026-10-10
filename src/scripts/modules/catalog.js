@@ -182,7 +182,7 @@ export function initCatalog() {
           <span>${p.tags.slice(0, 3).join(" • ")}</span>
         </div>
         <div class="split-item-meta">
-          <div style="color: ${p.liveUrl ? '#22c55e' : 'var(--faint)'}; font-weight: 600;">
+          <div style="color: ${p.liveUrl ? 'var(--accent)' : 'var(--faint)'}; font-weight: 600;">
             ${p.liveUrl ? '● LIVE' : 'VERIFIED'}
           </div>
           <div style="font-size: 9px; margin-top: 2px;">${p.updated}</div>

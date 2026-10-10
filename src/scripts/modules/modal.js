@@ -1,5 +1,5 @@
 /**
- * Modals: Project Deep-Dive Architecture & Interactive ATS Resume Viewer
+ * Modals: Project Deep-Dive Architecture, Interactive ATS Resume Viewer & Credential Proof Viewer
  */
 
 import { PROJECTS_DATA } from "../data/projects.js";
@@ -13,6 +13,13 @@ export function initProjectModal() {
 
   const resumeBackdrop = document.getElementById("resume-modal-backdrop");
   const resumeCloseBtn = document.getElementById("resume-modal-close-btn");
+
+  const credentialBackdrop = document.getElementById("credential-modal-backdrop");
+  const credentialTitle = document.getElementById("credential-modal-title");
+  const credentialIssuer = document.getElementById("credential-modal-issuer");
+  const credentialImage = document.getElementById("credential-modal-image");
+  const credentialGithub = document.getElementById("credential-modal-github");
+  const credentialCloseBtn = document.getElementById("credential-modal-close-btn");
 
   function closeModal() {
     if (backdrop) {
@@ -28,8 +35,16 @@ export function initProjectModal() {
     }
   }
 
+  function closeCredentialModal() {
+    if (credentialBackdrop) {
+      credentialBackdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+  }
+
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (resumeCloseBtn) resumeCloseBtn.addEventListener("click", closeResumeModal);
+  if (credentialCloseBtn) credentialCloseBtn.addEventListener("click", closeCredentialModal);
 
   if (backdrop) {
     backdrop.addEventListener("click", (e) => {
@@ -43,21 +58,45 @@ export function initProjectModal() {
     });
   }
 
+  if (credentialBackdrop) {
+    credentialBackdrop.addEventListener("click", (e) => {
+      if (e.target === credentialBackdrop) closeCredentialModal();
+    });
+  }
+
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       if (backdrop && backdrop.classList.contains("open")) closeModal();
       if (resumeBackdrop && resumeBackdrop.classList.contains("open")) closeResumeModal();
+      if (credentialBackdrop && credentialBackdrop.classList.contains("open")) closeCredentialModal();
     }
   });
 
   window.openResumeModal = function() {
     if (resumeBackdrop) {
+      const iframe = document.getElementById("resume-modal-iframe");
+      if (iframe && !iframe.getAttribute("src")) {
+        iframe.src = "/Abaid_Ullah_Resume.pdf";
+      }
       resumeBackdrop.classList.add("open");
       document.body.style.overflow = "hidden";
     }
   };
 
   window.closeResumeModal = closeResumeModal;
+
+  window.openCredentialModal = function(imageUrl, title, issuer, githubUrl) {
+    if (credentialBackdrop) {
+      if (credentialTitle) credentialTitle.textContent = title;
+      if (credentialIssuer) credentialIssuer.textContent = issuer;
+      if (credentialImage) credentialImage.src = imageUrl;
+      if (credentialGithub) credentialGithub.href = githubUrl;
+      credentialBackdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  window.closeCredentialModal = closeCredentialModal;
 
   window.openProjectModal = function(projectId) {
     if (!backdrop || !modalBody) return;

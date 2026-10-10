@@ -39,6 +39,27 @@ export const FYP_DATA = {
 
 export const CERTIFICATIONS_DATA = [
   {
+    id: "cert-pak-angels",
+    title: "Generative AI Application Developer (Top Performer)",
+    issuer: "Pak Angels • Silicon Valley, California",
+    period: "June 2025 – August 2025",
+    credentialId: "322056cbc677032d",
+    image: "/credentials/pak-angels-genai-certificate.jpg",
+    githubUrl: "https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/pak-angels-genai-certificate.jpg",
+    skills: ["Generative AI", "LLMs", "Prompt Engineering", "Python", "API Integration", "Agentic Workflows"],
+    description: "Awarded Top Performer in the Silicon Valley Generative AI Application Developer program (Certificate ID: 322056cbc677032d). Mastered LLM prompting strategies, retrieval architectures, agentic pipelines, and AI product integrations."
+  },
+  {
+    id: "cert-tracking",
+    title: "IT Department Software Engineering Internship",
+    issuer: "Tracking • IT Department",
+    period: "June 2026 – August 2026",
+    image: "/credentials/tracking-internship-certificate.png",
+    githubUrl: "https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/tracking-internship-certificate.png",
+    skills: ["Software Engineering", "Enterprise Systems", "IT Infrastructure", "Quality Assurance", "System Administration"],
+    description: "Completed 2-month professional software engineering internship with Tracking IT Department, gaining hands-on industry experience in software delivery, quality assurance, system maintenance, and enterprise workflows."
+  },
+  {
     id: "cert-web",
     title: "Full-Stack Web Development & Modern Architecture",
     issuer: "Coursera / Online Technical Specialization",
@@ -89,6 +110,34 @@ export const CERTIFICATIONS_DATA = [
 ];
 
 export const INTERNSHIPS_DATA = [
+  {
+    role: "Software Engineering Intern",
+    organization: "Quaid Ventures",
+    period: "June 28, 2026 – August 25, 2026",
+    location: "Lahore, Pakistan",
+    letterUrl: "/credentials/quaid-ventures-experience-letter.png",
+    githubUrl: "https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/quaid-ventures-experience-letter.png",
+    points: [
+      "Conducted targeted debugging and QA on Shipr, resolving complex AI-related bugs to improve system reliability and data accuracy.",
+      "Built an event-driven background task system using Apache Kafka and Redis for real-time analytics, caching, and granular RBAC.",
+      "Engineered a high-concurrency Inventory Management System using PostgreSQL and Prisma with row-level locks and atomic transactions to prevent race conditions.",
+      "Developed Shop.co, a production-ready full-stack clothing commerce application with React, Redux, Axios, Stripe checkout transactions, and MongoDB analytics.",
+      "Architected a modular backend for an Enterprise HR Portal spanning 19 business domains (workforce, leave, attendance, payroll).",
+      "Built a full-duplex real-time messaging engine with Socket.IO and Kafka for JWT-authenticated private and group messaging."
+    ]
+  },
+  {
+    role: "IT Department Software Engineering Intern",
+    organization: "Tracking",
+    period: "June 2026 – August 2026",
+    location: "Lahore, Pakistan",
+    certificateUrl: "/credentials/tracking-internship-certificate.png",
+    githubUrl: "https://github.com/Abaidullah9/portfolio/blob/master/public/credentials/tracking-internship-certificate.png",
+    points: [
+      "Completed 2-month professional software engineering internship in the IT Department on August 11, 2026.",
+      "Contributed to enterprise software quality assurance, internal tooling, and IT infrastructure workflows."
+    ]
+  },
   {
     role: "Full-Stack Software Engineering Intern / Solo Developer",
     organization: "Shop.co E-Commerce Platform",
