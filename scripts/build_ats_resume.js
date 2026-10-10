@@ -38,9 +38,7 @@ const resumeHtml = `<!DOCTYPE html>
   }
   .header {
     text-align: center;
-    margin-bottom: 7px;
-    border-bottom: 1.5px solid #111827;
-    padding-bottom: 5px;
+    margin-bottom: 8px;
   }
   .header h1 {
     font-size: 19.5pt;
