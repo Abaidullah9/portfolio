@@ -2,14 +2,23 @@
 
 A high-performance personal portfolio and engineering showcase designed with the exact visual language, technical aesthetic, and interaction patterns of the **[Litho Template Marketplace](https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html)**.
 
-[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](https://vercel.com)
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-abaid--ullah--portfolio.onrender.com-46E3B7?style=for-the-badge&logo=render)](https://abaid-ullah-portfolio.onrender.com)
 [![Render Deployment](https://img.shields.io/badge/Deploy-Render-46E3B7?style=flat&logo=render)](https://render.com)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-222222?style=flat&logo=github)](https://pages.github.com)
+[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](https://vercel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
 ---
 
-## 🌟 Live Flagship Deployments
+## 🌐 Live Portfolio & Flagship Deployments
+
+- **Live Portfolio Website:** **[https://abaid-ullah-portfolio.onrender.com](https://abaid-ullah-portfolio.onrender.com)**
+- **Shop.co (Full-Stack E-Commerce):** **[https://shop-co-rust-phi.vercel.app/](https://shop-co-rust-phi.vercel.app/)**
+- **Litho Template Marketplace (FYP):** **[https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html](https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html)**
+- **Attendance Management System (AMS):** **[https://attendance-management-system-weld.vercel.app/](https://attendance-management-system-weld.vercel.app/)**
+
+---
+
+## 🌟 Live Flagship Deployments Breakdown
 
 1. **[Shop.co — Full-Stack E-Commerce Platform](https://shop-co-rust-phi.vercel.app/)**
    - **Frontend:** React 18, Vite, TypeScript, Tailwind CSS
@@ -147,6 +156,7 @@ This repository includes a [`render.yaml`](render.yaml) Blueprint configuration.
 - **Honors:** Merit-Based Academic Scholarship from Government (2020 – 2025)
 - **Email:** [abaidullah99999@gmail.com](mailto:abaidullah99999@gmail.com)
 - **Phone:** +92-327-9399269
+- **Portfolio:** [https://abaid-ullah-portfolio.onrender.com](https://abaid-ullah-portfolio.onrender.com)
 - **LinkedIn:** [linkedin.com/in/abaidullah-bhatti-579b98290](https://www.linkedin.com/in/abaidullah-bhatti-579b98290)
 - **GitHub:** [github.com/Abaidullah9](https://github.com/Abaidullah9)
 

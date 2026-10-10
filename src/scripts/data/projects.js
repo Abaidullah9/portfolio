@@ -592,6 +592,7 @@ export const PROFILE_INFO = {
   email: "abaidullah99999@gmail.com",
   altEmail: "abaidullahhatti998@gmail.com",
   phone: "+92-327-9399269",
+  portfolio: "https://abaid-ullah-portfolio.onrender.com",
   github: "https://github.com/Abaidullah9",
   linkedin: "https://www.linkedin.com/in/abaidullah-bhatti-579b98290",
   education: {

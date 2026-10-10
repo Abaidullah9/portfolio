@@ -58,6 +58,7 @@ Institution:   ${PROFILE_INFO.education.institution}
 Degree:        ${PROFILE_INFO.education.degree} (${PROFILE_INFO.education.period})
 Academic CGPA: ${PROFILE_INFO.education.cgpa}
 Honors:        ${PROFILE_INFO.education.honors}
+Portfolio:     ${PROFILE_INFO.portfolio}
 Primary Focus: Production MERN/Next.js Web Platforms, Low-Level Compilers & DB Benchmarking
 Interactive:   Type 'resume' or 'open resume' to view the interactive ATS resume sheet.
 Download:      Direct PDF available at /Abaid_Ullah_Resume.pdf
@@ -114,6 +115,7 @@ Technical Stack Matrix:
 Direct Contact Channels:
   Email:       ${PROFILE_INFO.email}
   Phone:       ${PROFILE_INFO.phone}
+  Portfolio:   ${PROFILE_INFO.portfolio}
   GitHub:      ${PROFILE_INFO.github}
   LinkedIn:    ${PROFILE_INFO.linkedin}
   Location:    ${PROFILE_INFO.location}
