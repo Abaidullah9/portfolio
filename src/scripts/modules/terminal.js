@@ -52,15 +52,26 @@ GitHub Repo:      ${FYP_DATA.githubUrl}
 
     "cat resume": () => `
 ================================================================
-ABAID ULLAH BHATTI — SOFTWARE ENGINEER & CS UNDERGRAD @ UET
+ABAID ULLAH BHATTI — SOFTWARE ENGINEER & CS SENIOR @ UET LAHORE
 ================================================================
 Institution:   ${PROFILE_INFO.education.institution}
 Degree:        ${PROFILE_INFO.education.degree} (${PROFILE_INFO.education.period})
 Academic CGPA: ${PROFILE_INFO.education.cgpa}
 Honors:        ${PROFILE_INFO.education.honors}
 Primary Focus: Production MERN/Next.js Web Platforms, Low-Level Compilers & DB Benchmarking
-Download:      Use the 'Resume / CV' button in header or download /Abaid_Ullah_Resume.pdf
+Interactive:   Type 'resume' or 'open resume' to view the interactive ATS resume sheet.
+Download:      Direct PDF available at /Abaid_Ullah_Resume.pdf
     `,
+
+    resume: () => {
+      if (window.openResumeModal) window.openResumeModal();
+      return "Opening interactive ATS resume viewer modal...";
+    },
+
+    "open resume": () => {
+      if (window.openResumeModal) window.openResumeModal();
+      return "Opening interactive ATS resume viewer modal...";
+    },
 
     certs: () => `
 Verified Certifications & Technical Coursework (${CERTIFICATIONS_DATA.length}):

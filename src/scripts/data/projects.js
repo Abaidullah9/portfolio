@@ -538,7 +538,7 @@ export const PROFILE_INFO = {
   handle: "Abaidullah9",
   eyebrow: "Full-Stack Software Engineer & CS Undergrad @ UET Lahore",
   title: "Building Scalable Web Systems, Distributed APIs & High-Throughput Developer Tools",
-  bio: "Computer Science undergrad at University of Engineering and Technology (UET) Lahore (CGPA 3.38). Passionate about architecting production full-stack web applications, resilient REST APIs, low-level compilers, and database performance benchmarking.",
+  bio: "Computer Science senior (7th Semester) at University of Engineering and Technology (UET) Lahore (CGPA 3.351). Passionate about architecting production full-stack web applications, resilient REST APIs, low-level compilers, and database performance benchmarking.",
   location: "Lahore, Pakistan",
   email: "abaidullah99999@gmail.com",
   altEmail: "abaidullahhatti998@gmail.com",
@@ -547,9 +547,9 @@ export const PROFILE_INFO = {
   linkedin: "https://www.linkedin.com/in/abaidullah-bhatti-579b98290",
   education: {
     institution: "University of Engineering and Technology (UET), Lahore",
-    degree: "Bachelors in Computer Science",
+    degree: "Bachelors in Computer Science (7th Semester)",
     period: "2023 – 2027",
-    cgpa: "3.38 / 4.00",
+    cgpa: "3.351 / 4.00",
     honors: "Government Merit-Based Academic Scholarship (2020 – 2025)"
   },
   skills: {

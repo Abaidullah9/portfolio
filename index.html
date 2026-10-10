@@ -54,9 +54,9 @@
         <a class="market-nav-link" href="#experience">Experience & Certs</a>
         <a class="market-nav-link" href="#skills">Skills</a>
         <a class="market-nav-link" href="#terminal">Terminal</a>
-        <a class="market-nav-link nav-cta" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
-          Resume / CV ↓
-        </a>
+        <button type="button" class="market-nav-link nav-cta" onclick="window.openResumeModal()" title="View ATS Resume Online">
+          Resume / CV 👁
+        </button>
         <a class="market-nav-link" href="#contact">Contact</a>
         
         <a class="icon-btn-subtle" href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer" title="GitHub Profile">
@@ -106,7 +106,7 @@
           <div class="page-eyebrow">Curated Engineering Showcase & Systems Registry</div>
           <h1>engineering scalable web systems & developer tools</h1>
           <p>
-            Computer Science engineer & full-stack architect studying at <strong>UET Lahore (CGPA 3.38)</strong>. 
+            Computer Science engineer & full-stack architect studying at <strong>UET Lahore (7th Semester • CGPA 3.351)</strong>. 
             Compiler & Backend Lead for <strong>Litho (FYP)</strong>, and creator of <strong>Shop.co</strong>. Specializing in production React/Next.js platforms, distributed Express APIs with RBAC, database performance benchmarking suites, and compiler systems.
           </p>
 
@@ -115,7 +115,7 @@
             <div class="hero-pill">Stack: <strong>React, Next.js, Node.js, Express</strong></div>
             <div class="hero-pill">Persistence: <strong>PostgreSQL, MongoDB, SQL Server, Redis</strong></div>
             <div class="hero-pill">Systems: <strong>C++, Tectonic/TeX, MASM32, Docker</strong></div>
-            <div class="hero-pill">Institution: <strong>UET Lahore (2023–2027)</strong></div>
+            <div class="hero-pill">Institution: <strong>UET Lahore (7th Sem • CGPA 3.351)</strong></div>
           </div>
 
           <div class="market-hero-actions">
@@ -125,9 +125,9 @@
             <a class="button live-btn" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">
               Shop.co Live Demo <span aria-hidden="true">↗</span>
             </a>
-            <a class="button publish-primary" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer">
-              Litho Marketplace <span aria-hidden="true">↗</span>
-            </a>
+            <button type="button" class="button publish-primary" onclick="window.openResumeModal()">
+              View ATS Resume 👁
+            </button>
             <a class="button" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
               Download CV <span aria-hidden="true">↓</span>
             </a>
@@ -435,6 +435,27 @@
         </div>
         <div class="recent-head-meta">
           <span class="recent-summary">verified online courses, internships, and technical credentials</span>
+        </div>
+      <!-- ATS Resume Showcase Card -->
+      <div style="background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius-md); padding: 20px 24px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; font-weight: 700;">
+            ■ OFFICIAL ATS RESUME & CREDENTIAL DOSSIER
+          </div>
+          <h3 style="font-size: 1.2rem; color: var(--heading); margin-bottom: 4px;">
+            Abaid Ullah Bhatti — Software Engineering Resume
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--muted); margin: 0;">
+            BS Computer Science, 7th Semester (CGPA: 3.351) • UET Lahore • 11 Engineering Repositories • Full-Stack & Systems Lead
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="button" class="button market-primary" onclick="window.openResumeModal()">
+            View Resume Online 👁
+          </button>
+          <a class="button publish-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
+            Download PDF ↓
+          </a>
         </div>
       </div>
 
@@ -762,7 +783,7 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
             <h3>University of Engineering and Technology (UET), Lahore</h3>
             <span class="timeline-date">2023 – 2027 (In Progress)</span>
           </div>
-          <div class="timeline-role">Bachelors in Computer Science • CGPA: 3.38 / 4.00</div>
+          <div class="timeline-role">Bachelors in Computer Science • 7th Semester (CGPA: 3.351 / 4.00)</div>
           <p>
             Rigorous computer science curriculum emphasizing data structures, algorithms, operating systems, compiler construction, database systems, computer networks, and software engineering methodologies.
           </p>
@@ -914,7 +935,7 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
         <a class="footer-link" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer">Litho Live ↗</a>
         <a class="footer-link" href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer">GitHub ↗</a>
         <a class="footer-link" href="https://www.linkedin.com/in/abaidullah-bhatti-579b98290" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a class="footer-link" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">Resume / CV ↓</a>
+        <button type="button" class="footer-link" onclick="window.openResumeModal()" style="background: none; border: none; padding: 0; cursor: pointer; color: inherit; font: inherit;">Resume / CV 👁</button>
       </div>
     </div>
   </footer>
@@ -930,6 +951,32 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
         <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
       </div>
       <div class="modal-content" id="modal-project-body"></div>
+    </div>
+  </div>
+
+  <!-- Interactive ATS Resume Viewer Modal -->
+  <div class="modal-backdrop" id="resume-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-resume-title">
+    <div class="modal-window" style="max-width: 960px; width: 95%; max-height: 94vh; display: flex; flex-direction: column;">
+      <div class="modal-header" style="flex-shrink: 0;">
+        <div>
+          <h3 id="modal-resume-title">ABAID ULLAH BHATTI — ATS RESUME</h3>
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--accent);">
+            BS Computer Science (7th Semester • CGPA 3.351) • UET Lahore
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a class="button market-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer" style="padding: 4px 12px; font-size: 11px;">
+            Download PDF ↓
+          </a>
+          <a class="button" href="/Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer" style="padding: 4px 12px; font-size: 11px;">
+            Open Tab ↗
+          </a>
+          <button type="button" class="modal-close" id="resume-modal-close-btn" aria-label="Close resume modal">✕</button>
+        </div>
+      </div>
+      <div class="modal-content" style="padding: 0; flex: 1; min-height: 600px; overflow: hidden; background: #111;">
+        <iframe src="/Abaid_Ullah_Resume.pdf" title="Abaid Ullah Bhatti Resume PDF" style="width: 100%; height: 78vh; border: none; background: #fff;"></iframe>
+      </div>
     </div>
   </div>
 

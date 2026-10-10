@@ -1,5 +1,5 @@
 /**
- * Project Deep-Dive Architecture Modal
+ * Modals: Project Deep-Dive Architecture & Interactive ATS Resume Viewer
  */
 
 import { PROJECTS_DATA } from "../data/projects.js";
@@ -11,28 +11,56 @@ export function initProjectModal() {
   const modalBody = document.getElementById("modal-project-body");
   const closeBtn = document.getElementById("modal-close-btn");
 
-  if (!backdrop || !modalBody) return;
+  const resumeBackdrop = document.getElementById("resume-modal-backdrop");
+  const resumeCloseBtn = document.getElementById("resume-modal-close-btn");
 
   function closeModal() {
-    backdrop.classList.remove("open");
-    document.body.style.overflow = "";
+    if (backdrop) {
+      backdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeModal);
+  function closeResumeModal() {
+    if (resumeBackdrop) {
+      resumeBackdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
   }
 
-  backdrop.addEventListener("click", (e) => {
-    if (e.target === backdrop) closeModal();
-  });
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (resumeCloseBtn) resumeCloseBtn.addEventListener("click", closeResumeModal);
+
+  if (backdrop) {
+    backdrop.addEventListener("click", (e) => {
+      if (e.target === backdrop) closeModal();
+    });
+  }
+
+  if (resumeBackdrop) {
+    resumeBackdrop.addEventListener("click", (e) => {
+      if (e.target === resumeBackdrop) closeResumeModal();
+    });
+  }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && backdrop.classList.contains("open")) {
-      closeModal();
+    if (e.key === "Escape") {
+      if (backdrop && backdrop.classList.contains("open")) closeModal();
+      if (resumeBackdrop && resumeBackdrop.classList.contains("open")) closeResumeModal();
     }
   });
 
+  window.openResumeModal = function() {
+    if (resumeBackdrop) {
+      resumeBackdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  window.closeResumeModal = closeResumeModal;
+
   window.openProjectModal = function(projectId) {
+    if (!backdrop || !modalBody) return;
     const project = PROJECTS_DATA.find(p => p.id === projectId);
     if (!project) return;
 
