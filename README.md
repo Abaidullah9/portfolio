@@ -124,10 +124,17 @@ You can deploy the built `dist/` directory using `gh-pages`:
 npx gh-pages -d dist
 ```
 
-### Deploy to Render or Netlify
+### Deploy to Render (1-Click Blueprint)
 
-- **Render:** Connect GitHub repository, select **Static Site**, set publish directory to `dist`, and build command to `npm run build`.
-- **Netlify:** Drag and drop the `dist/` folder or link the GitHub repo.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Abaidullah9/portfolio)
+
+This repository includes a [`render.yaml`](render.yaml) Blueprint configuration.
+1. Click the **Deploy to Render** button above (or navigate to [dashboard.render.com](https://dashboard.render.com/blueprints)).
+2. Connect your GitHub account and select this repository (`Abaidullah9/portfolio`).
+3. Render automatically provisions the static site with:
+   - **Build Command:** `npm install && npm run build`
+   - **Publish Directory:** `dist`
+   - **Auto Deploy:** Enabled on every push to `master`.
 
 ---
 
@@ -135,8 +142,8 @@ npx gh-pages -d dist
 
 - **Name:** Abaid Ullah Bhatti
 - **Education:** University of Engineering and Technology (UET), Lahore
-- **Degree:** Bachelors in Computer Science (2023 – 2027)
-- **Academic CGPA:** 3.38 / 4.00
+- **Degree:** Bachelors in Computer Science (7th Semester • 2023 – 2027)
+- **Academic CGPA:** 3.351 / 4.00
 - **Honors:** Merit-Based Academic Scholarship from Government (2020 – 2025)
 - **Email:** [abaidullah99999@gmail.com](mailto:abaidullah99999@gmail.com)
 - **Phone:** +92-327-9399269
