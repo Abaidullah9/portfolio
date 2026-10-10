@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>Abaid Ullah Bhatti — Full-Stack Engineer & Systems Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Abaid Ullah Bhatti — Full-Stack Software Engineer & CS Undergrad @ UET Lahore. Featuring Shop.co, Litho Template Marketplace, and production systems." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Abaid Ullah Bhatti — Engineering Portfolio" />
+  <meta property="og:description" content="Production React/Next.js platforms, distributed Express backends, database benchmarking suites, and compiler design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/profile.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/src/styles/litho-design-system.css" />
+
+  <!-- Pre-render theme check to prevent FOUC (Litho standard) -->
+  <script>
+    (function() {
+      var t = null;
+      try { t = localStorage.getItem("litho-theme"); } catch(e) {}
+      document.documentElement.dataset.theme = /^[a-z0-9-]{1,32}$/.test(t || "") ? t : "dark";
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to project catalog</a>
+
+  <!-- Header (Faithfully following Litho Header design) -->
+  <header class="market-header">
+    <div class="market-header-inner">
+      <div class="market-brand">
+        <a class="market-brand-home" href="/" aria-label="Abaid Ullah Portfolio">
+          <div class="market-brand-logo">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L2 22h5l2-4h6l2 4h5L12 2zm0 7.5L15 15H9l3-5.5z"/>
+            </svg>
+          </div>
+          <span>ABAID ULLAH<span class="brand-detail">// DEV & SYSTEMS</span></span>
+        </a>
+      </div>
+
+      <nav class="market-nav" aria-label="Main navigation">
+        <div class="market-support-link" title="Open to full-stack & software engineering opportunities">
+          <span class="market-support-dot" aria-hidden="true"></span>
+          <span>Open to Work</span>
+        </div>
+        <a class="market-nav-link" href="#featured">Featured</a>
+        <a class="market-nav-link" href="#catalog">Projects</a>
+        <a class="market-nav-link" href="#skills">Skills</a>
+        <a class="market-nav-link" href="#education">Education</a>
+        <a class="market-nav-link" href="#terminal">Terminal</a>
+        <a class="market-nav-link nav-cta" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
+          Resume / CV ↓
+        </a>
+        <a class="market-nav-link" href="#contact">Contact</a>
+        
+        <a class="icon-btn-subtle" href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer" title="GitHub Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <!-- Litho Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle-btn" type="button" aria-label="Toggle Color Theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.2 0-1 .9-1.8 2-1.8H17a4 4 0 0 0 4-4c0-4.4-4-7.7-9-7.7Z"/>
+          </svg>
+          <span id="theme-label">Theme</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Faithfully matching Litho Hero layout & typography) -->
+    <section class="container">
+      <div class="market-hero">
+        <div class="market-hero-copy">
+          <div class="page-eyebrow">Curated Engineering Showcase & Systems Registry</div>
+          <h1>engineering scalable web systems & developer tools</h1>
+          <p>
+            Computer Science engineer & full-stack architect studying at <strong>UET Lahore (CGPA 3.38)</strong>. 
+            I build production-grade web platforms with React/Next.js, distributed Express APIs with RBAC, database performance benchmarking suites, and compiler systems.
+          </p>
+
+          <div class="market-hero-badges">
+            <div class="hero-pill">Stack: <strong>React, Next.js, Node.js, Express</strong></div>
+            <div class="hero-pill">Persistence: <strong>PostgreSQL, MongoDB, SQL Server, Redis</strong></div>
+            <div class="hero-pill">Systems: <strong>C++, Lexer/Parser, MASM32, Docker</strong></div>
+            <div class="hero-pill">Institution: <strong>UET Lahore (2023–2027)</strong></div>
+          </div>
+
+          <div class="market-hero-actions">
+            <a class="button market-primary" href="#catalog">
+              Browse All Works <span aria-hidden="true">→</span>
+            </a>
+            <a class="button live-btn" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">
+              Shop.co Live Demo <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button publish-primary" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer">
+              Litho Marketplace <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
+              Download CV <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Parametric Ray Visualizer (Signature Litho Canvas Widget) -->
+        <button class="market-hero-ray" id="hero-ray-container" type="button" aria-label="Parametric Ray Waveform Visualizer. Click to cycle math modes.">
+          <span class="market-hero-ray-hint">Parametric Visualizer • Click to cycle</span>
+          <canvas id="hero-ray-canvas" width="400" height="300"></canvas>
+          <span class="market-hero-ray-label" id="hero-ray-label">RAY 04/05 - QUANTUM</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Flagship Deployments Section -->
+    <section class="gems-section" id="featured">
+      <div class="container">
+        <div class="market-section-head">
+          <div>
+            <div class="page-eyebrow" style="margin-bottom: 4px;">Primary Deployments</div>
+            <h2>FEATURED PRODUCTION DEPLOYMENTS</h2>
+          </div>
+          <div class="recent-head-meta">
+            <span class="recent-summary">verified · deployed on Vercel & Render cloud</span>
+            <a href="#catalog">view full registry →</a>
+          </div>
+        </div>
+
+        <div class="gems-grid">
+          <!-- Flagship 1: Shop.co -->
+          <article class="flagship-card featured-gold">
+            <div class="flagship-top">
+              <span class="flagship-badge">🟢 LIVE ON VERCEL & RENDER</span>
+              <div class="flagship-links-top">
+                <a class="icon-btn-subtle" href="https://github.com/Abaidullah9/Shop.co" target="_blank" rel="noreferrer" title="Shop.co GitHub Repository">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a class="icon-btn-subtle" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer" title="Open Live Demo">
+                  <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <h3>Shop.co</h3>
+            <div class="flagship-subtitle">Enterprise MERN Stack E-Commerce Platform</div>
+            <p>
+              Production-ready, highly scalable, and fully-typed clothing commerce application engineered with strict architectural patterns: Role-Based Access Control (RBAC), cookie-based JWT authentication with refresh token rotation, and atomic checkout transactions.
+            </p>
+
+            <ul class="flagship-highlights">
+              <li>Granular API-level RBAC authorization with dynamic roles & permissions</li>
+              <li>Unified shopping cart supporting guest UUIDs and authenticated cart merging</li>
+              <li>Atomic MongoDB transactions for concurrency protection & Stripe webhook fulfillment</li>
+              <li>Admin analytics engine utilizing native MongoDB aggregation pipelines</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tech-tag">React 18</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MongoDB Atlas</span>
+              <span class="tech-tag">Stripe</span>
+              <span class="tech-tag">Cloudinary</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
+
+            <div class="flagship-actions">
+              <a class="button market-primary" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">
+                Open Live Platform <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button" href="https://github.com/Abaidullah9/Shop.co" target="_blank" rel="noreferrer">
+                GitHub Repo <span aria-hidden="true">↗</span>
+              </a>
+              <button type="button" class="button publish-primary" onclick="window.openProjectModal('shop-co')">
+                Architecture Breakdown ⓘ
+              </button>
+            </div>
+          </article>
+
+          <!-- Flagship 2: Litho Template Marketplace -->
+          <article class="flagship-card featured-gold">
+            <div class="flagship-top">
+              <span class="flagship-badge blue">🟢 LIVE ON RENDER DOCKER</span>
+              <div class="flagship-links-top">
+                <a class="icon-btn-subtle" href="https://github.com/Abaidullah9/Litho-Template-Marketplace" target="_blank" rel="noreferrer" title="Litho Marketplace GitHub Repository">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a class="icon-btn-subtle" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer" title="Open Live Marketplace">
+                  <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <h3>Litho Template Marketplace</h3>
+            <div class="flagship-subtitle">Academic & Technical Document Registry</div>
+            <p>
+              Curated registry for technical document templates (theses, scientific papers, technical reports, and CVs). Features full-text search with token parsing, dual cards/split views, Supabase PostgreSQL persistence, and an administrative moderation console.
+            </p>
+
+            <ul class="flagship-highlights">
+              <li>Next.js 16 App Router frontend integrated with Express 5 backend APIs</li>
+              <li>Supabase PostgreSQL database with migration pipeline and automated seeders</li>
+              <li>Tokenized search engine parsing <code>tag:</code>, <code>kind:</code>, and publisher filters</li>
+              <li>Interactive parametric canvas animation engine with real-time waveform generator</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tech-tag">Next.js 16</span>
+              <span class="tech-tag">Express 5</span>
+              <span class="tech-tag">Supabase</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Render</span>
+            </div>
+
+            <div class="flagship-actions">
+              <a class="button market-primary" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer">
+                Open Live Registry <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button" href="https://github.com/Abaidullah9/Litho-Template-Marketplace" target="_blank" rel="noreferrer">
+                GitHub Repo <span aria-hidden="true">↗</span>
+              </a>
+              <button type="button" class="button publish-primary" onclick="window.openProjectModal('litho-marketplace')">
+                Architecture Breakdown ⓘ
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Catalog / Registry Section (Litho Catalog Architecture) -->
+    <section class="container market-catalog" id="catalog">
+      <div class="catalog-heading">
+        <div>
+          <span class="page-eyebrow">Registry</span>
+          <h2>browse all works & repositories</h2>
+        </div>
+        <div class="catalog-heading-side">
+          <!-- Litho View Mode Selector: Cards vs. Split -->
+          <div class="catalog-view-mode" role="group" aria-label="Catalog layout mode">
+            <button type="button" data-view="cards" aria-pressed="true">Cards</button>
+            <button type="button" data-view="split" aria-pressed="false">Split view</button>
+          </div>
+          <p>
+            <span id="plugin-count" style="color: var(--heading); font-weight: 700;">11</span>
+            <span>engineering projects</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Catalog Controls: Search, Token Input, Sort -->
+      <div class="catalog-controls">
+        <div class="market-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m20 20-4-4"/>
+          </svg>
+          <div class="search-input-wrap">
+            <input 
+              id="search-input" 
+              type="search" 
+              placeholder="Search projects, tags: react, python, c++, rbac, compiler..." 
+              autocomplete="off" 
+              spellcheck="false"
+              aria-label="Search all engineering projects"
+            />
+          </div>
+          <span class="search-clear" id="search-clear" title="Clear search">✕</span>
+          <kbd class="search-shortcut">Ctrl K</kbd>
+        </div>
+
+        <label class="sort-control">
+          <span class="sr-only">Sort projects</span>
+          <select id="sort-select">
+            <option value="featured">Featured First</option>
+            <option value="updated">Recently Updated</option>
+            <option value="name">Alphabetical (A–Z)</option>
+            <option value="complexity">System Complexity</option>
+          </select>
+          <svg viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></svg>
+        </label>
+      </div>
+
+      <!-- Category Filter Pills Bar -->
+      <div class="category-bar">
+        <span>Filter:</span>
+        <div class="category-list" id="category-filters"></div>
+        <button type="button" class="clear-filters-btn" id="clear-filters">Reset All</button>
+      </div>
+
+      <!-- Mode 1: Cards View Grid -->
+      <div class="plugin-grid" id="plugin-grid"></div>
+
+      <!-- Mode 2: Litho Signature Split View -->
+      <div class="catalog-split" id="catalog-split" hidden>
+        <!-- Left Panel: Navigable Item List -->
+        <section class="split-panel" aria-label="Project Registry List">
+          <div class="split-panel-label">
+            <span>Engineering Systems</span>
+            <span style="color: var(--accent);">↑↓ Arrow keys to navigate</span>
+          </div>
+          <div class="split-grid" id="split-grid" role="listbox"></div>
+        </section>
+
+        <!-- Right Panel: Selected Item Detail & Benchmark Standing Stats -->
+        <aside class="split-aside">
+          <div class="split-card" id="split-card"></div>
+          <section class="split-stats" aria-labelledby="split-stats-title">
+            <div class="split-panel-label">
+              <span id="split-stats-title">Architecture & Complexity Metrics</span>
+              <span>Standing</span>
+            </div>
+            <div class="split-stats-body" id="split-stats-body"></div>
+            <p class="split-stats-foot">Metrics evaluated based on production rigor, schema design, and algorithmic depth.</p>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Interactive Hacker Terminal Section -->
+    <section class="container terminal-section" id="terminal">
+      <div class="market-section-head">
+        <div>
+          <span class="page-eyebrow">Interactive CLI</span>
+          <h2>RECRUITER DEVELOPER TERMINAL</h2>
+        </div>
+        <div class="recent-head-meta">
+          <span class="recent-summary">type <code>help</code> or <code>cat resume</code> to inspect</span>
+        </div>
+      </div>
+
+      <div class="terminal-box" id="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <span class="terminal-title">abaid-portfolio-cli — v1.0.0 (x86_64-pc-linux-gnu)</span>
+          <span style="font-size: 10px; color: var(--faint);">Press Enter to execute</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-output" id="terminal-output">Welcome to Abaid Ullah's Developer Terminal.
+Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspect available commands, or <span style="color: var(--stable); font-weight: bold;">cat resume</span> for educational background.</div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">guest@abaid:~$</span>
+            <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type 'help', 'skills', or 'projects'..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix Section -->
+    <section class="container skills-section" id="skills">
+      <div class="market-section-head">
+        <div>
+          <span class="page-eyebrow">Competencies</span>
+          <h2>TECHNICAL SKILLS & ENGINEERING STACK</h2>
+        </div>
+        <div class="recent-head-meta">
+          <span class="recent-summary">verified across active GitHub repositories</span>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </span>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">TypeScript</span>
+            <span class="skill-item">JavaScript (ES6+)</span>
+            <span class="skill-item">Python 3</span>
+            <span class="skill-item">C / C++17</span>
+            <span class="skill-item">x86 Assembly (MASM32)</span>
+            <span class="skill-item">SQL & T-SQL</span>
+            <span class="skill-item">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </span>
+            <h3>Frontend Architecture</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">React 18</span>
+            <span class="skill-item">Next.js 16 (App Router)</span>
+            <span class="skill-item">Vite Bundler</span>
+            <span class="skill-item">Tailwind CSS</span>
+            <span class="skill-item">State Management</span>
+            <span class="skill-item">Parametric Canvas APIs</span>
+            <span class="skill-item">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </span>
+            <h3>Backend & APIs</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Node.js</span>
+            <span class="skill-item">Express 5</span>
+            <span class="skill-item">ASP.NET Core REST API</span>
+            <span class="skill-item">JWT in httpOnly Cookies</span>
+            <span class="skill-item">Action-based RBAC</span>
+            <span class="skill-item">Stripe Checkout & Webhooks</span>
+            <span class="skill-item">Atomic Transactions</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </span>
+            <h3>Databases & Persistence</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">MongoDB & Mongoose 9</span>
+            <span class="skill-item">PostgreSQL</span>
+            <span class="skill-item">SQL Server</span>
+            <span class="skill-item">Redis Caching</span>
+            <span class="skill-item">Prisma ORM</span>
+            <span class="skill-item">Supabase</span>
+            <span class="skill-item">DB Benchmarking</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3>Systems & Compilers</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Flex (Lexer)</span>
+            <span class="skill-item">Bison (LALR Parser)</span>
+            <span class="skill-item">Three-Address Code (TAC)</span>
+            <span class="skill-item">AST Generation</span>
+            <span class="skill-item">x86 Registers & GDI</span>
+            <span class="skill-item">Linux / Bash Toolchains</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            <h3>Testing & Cloud DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Jest (58 Unit Tests)</span>
+            <span class="skill-item">Supertest Integration</span>
+            <span class="skill-item">Vitest</span>
+            <span class="skill-item">Docker & Docker Compose</span>
+            <span class="skill-item">Git & GitHub Actions</span>
+            <span class="skill-item">Render & Vercel</span>
+            <span class="skill-item">Postman Test Suites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education, Academic Milestones & Extracurriculars -->
+    <section class="container education-section" id="education">
+      <div class="market-section-head">
+        <div>
+          <span class="page-eyebrow">Academic Background</span>
+          <h2>EDUCATION & RESEARCH MILESTONES</h2>
+        </div>
+        <div class="recent-head-meta">
+          <span class="recent-summary">University of Engineering and Technology (UET) Lahore</span>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <h3>University of Engineering and Technology (UET), Lahore</h3>
+            <span class="timeline-date">2023 – 2027 (In Progress)</span>
+          </div>
+          <div class="timeline-role">Bachelors in Computer Science • CGPA: 3.38 / 4.00</div>
+          <p>
+            Rigorous computer science curriculum emphasizing data structures, algorithms, operating systems, compiler construction, database systems, computer networks, and software engineering methodologies.
+          </p>
+          <div class="tag-list" style="margin-bottom: 0;">
+            <span class="tech-tag">Government Merit-Based Academic Scholarship (2020 – 2025)</span>
+            <span class="tech-tag">UET ACM Society Event Coordinator</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <h3>Secure Cyber Reconnaissance Framework</h3>
+            <span class="timeline-date">Lead Researcher</span>
+          </div>
+          <div class="timeline-role">Academic Cybersecurity Initiative • UET Lahore</div>
+          <p>
+            Designed an early-warning reconnaissance framework identifying attack surfaces and passive network vulnerabilities. Successfully demonstrated over 30% reduction in unmonitored attack vectors across simulated testing environments.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <h3>Graphical Chess Engine in MASM32</h3>
+            <span class="timeline-date">Low-Level Systems Researcher</span>
+          </div>
+          <div class="timeline-role">Computer Architecture Coursework</div>
+          <p>
+            Engineered register-optimized move validation, legal move calculations, and low-level frame-buffer pixel manipulation with zero high-level abstractions, achieving sub-millisecond move execution in memory-constrained environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Hire Section -->
+    <section class="container contact-section" id="contact">
+      <div class="market-section-head">
+        <div>
+          <span class="page-eyebrow">Get in Touch</span>
+          <h2>CONTACT & HIRING INQUIRIES</h2>
+        </div>
+        <div class="recent-head-meta">
+          <span class="recent-summary">actively exploring full-stack & software engineering positions</span>
+        </div>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Direct Contact Information -->
+        <div class="contact-info-card">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <img src="/avatar.png" alt="Abaid Ullah" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover;" />
+            <div>
+              <h3 style="font-size: 1.2rem; color: var(--heading);">Abaid Ullah Bhatti</h3>
+              <p style="font-family: var(--mono); font-size: 11px; color: var(--accent);">Software Engineer • Lahore, Pakistan</p>
+            </div>
+          </div>
+
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--muted);">
+            Feel free to reach out for full-time software engineering roles, full-stack development contracts, or open-source collaborations.
+          </p>
+
+          <div class="contact-link-row">
+            <div class="contact-link-label">
+              <span>✉</span>
+              <span>Primary Email</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="contact-link-val">abaidullah99999@gmail.com</span>
+              <button type="button" class="copy-btn" data-copy="abaidullah99999@gmail.com" title="Copy Email">Copy</button>
+            </div>
+          </div>
+
+          <div class="contact-link-row">
+            <div class="contact-link-label">
+              <span>☎</span>
+              <span>Direct Phone</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="contact-link-val">+92-327-9399269</span>
+              <button type="button" class="copy-btn" data-copy="+923279399269" title="Copy Phone">Copy</button>
+            </div>
+          </div>
+
+          <div class="contact-link-row">
+            <div class="contact-link-label">
+              <span>LinkedIn</span>
+            </div>
+            <a href="https://www.linkedin.com/in/abaidullah-bhatti-579b98290" target="_blank" rel="noreferrer" class="button" style="padding: 4px 10px; font-size: 10px;">
+              View Profile ↗
+            </a>
+          </div>
+
+          <div class="contact-link-row">
+            <div class="contact-link-label">
+              <span>GitHub</span>
+            </div>
+            <a href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer" class="button" style="padding: 4px 10px; font-size: 10px;">
+              @Abaidullah9 ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Message Form -->
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input id="contact-name" type="text" required placeholder="e.g. Sarah Jenkins" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Your Work Email</label>
+            <input id="contact-email" type="email" required placeholder="e.g. sarah@techcorp.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Project or Role Details</label>
+            <textarea id="contact-message" rows="4" required placeholder="Tell me about the engineering opportunity, timeline, or project scope..."></textarea>
+          </div>
+
+          <button type="submit" class="button market-primary" style="margin-top: 8px; width: 100%;">
+            Send Direct Message ✉
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Litho Styled Footer -->
+  <footer class="market-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">ABAID ULLAH BHATTI</span>
+        <span style="color: var(--faint);">// Computer Science Undergrad @ UET Lahore</span>
+      </div>
+
+      <div class="footer-links">
+        <a class="footer-link" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">Shop.co Live ↗</a>
+        <a class="footer-link" href="https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html" target="_blank" rel="noreferrer">Litho Live ↗</a>
+        <a class="footer-link" href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/abaidullah-bhatti-579b98290" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="footer-link" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">Resume / CV ↓</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Architecture Deep Dive Modal -->
+  <div class="modal-backdrop" id="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-project-title">Project Name</h3>
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--accent);" id="modal-project-subtitle">Subtitle</span>
+        </div>
+        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-content" id="modal-project-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Component -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Vite entry script -->
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>
