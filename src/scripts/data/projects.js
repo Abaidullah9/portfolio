@@ -1,7 +1,149 @@
 /**
- * Abaid Ullah Bhatti — Project Registry Data
- * Sourced directly from GitHub: https://github.com/Abaidullah9
+ * Abaid Ullah Bhatti — Project Registry, FYP, Certifications & Experience Data
+ * Sourced directly from GitHub, UET Lahore, and Professional Credentials
  */
+
+export const FYP_DATA = {
+  title: "Litho: Markdown-to-LaTeX Publishing Ecosystem for Reproducible Technical Documents",
+  institution: "University of Engineering and Technology (UET), Lahore",
+  department: "Department of Computer Science (Session 2023–2027)",
+  group: "Group 21",
+  supervisor: "Miss Rimsha",
+  team: [
+    { name: "Abaidullah Bhatti", roll: "2023-CS-713", role: "Compiler & LaTeX Backend Engine Lead" },
+    { name: "Rabia Nadeem", roll: "2023-CS-705", role: "Grammar Spec, Parser & Metadata Embedding" },
+    { name: "Abdul Rahman", roll: "2023-CS-725", role: "CLI, Template Packages & MCP/API Server" },
+    { name: "Sohaib Shaukat", roll: "2023-CS-740", role: "Editor Tooling & Template Marketplace App" }
+  ],
+  description: "A template-driven Markdown-to-LaTeX publishing ecosystem with full round-trip reproducibility. Authors write CommonMark-compatible Markdown extended with front matter and shortcodes; a custom Python interpreter parses it, binds it to versioned publisher LaTeX templates via formal schemas, and compiles it through an optimized Tectonic fork into PDFs that embed the original Markdown source and template ID in their XMP metadata for lossless recovery.",
+  abaidullahOwnership: [
+    {
+      feature: "Template-Binding Compiler (F4)",
+      detail: "Engineered the schema resolution and template-binding compiler mapping parsed CommonMark AST nodes into structured publisher LaTeX templates."
+    },
+    {
+      feature: "LaTeX Code Generator (F5)",
+      detail: "Developed high-fidelity Jinja2 and format-string LaTeX emission pipeline handling callouts, mathematical formulae, figures, citations, and Gantt charts."
+    },
+    {
+      feature: "Litho-Optimized Tectonic Backend (F6)",
+      detail: "Configured and trimmed the Tectonic TeX fork, bundling precompiled format files and containerized subprocess execution for reproducible builds."
+    },
+    {
+      feature: "Golden-PDF Regression Testing (F22)",
+      detail: "Designed the automated golden-PDF regression harness in CI comparing pixel-diff baselines across thesis, IEEE paper, and technical book templates."
+    }
+  ],
+  liveUrl: "https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html",
+  githubUrl: "https://github.com/Abaidullah9/Litho-Template-Marketplace"
+};
+
+export const CERTIFICATIONS_DATA = [
+  {
+    id: "cert-web",
+    title: "Full-Stack Web Development & Modern Architecture",
+    issuer: "Coursera / Online Technical Specialization",
+    period: "2023 – 2025",
+    skills: ["React 18", "Next.js", "Node.js", "Express", "Tailwind CSS", "REST APIs"],
+    description: "Comprehensive training in building production-ready single-page applications, component architectures, client-side routing, JWT authentication, and responsive corporate user interfaces."
+  },
+  {
+    id: "cert-sql",
+    title: "Advanced SQL & Relational Database Architecture",
+    issuer: "Technical Specialization & UET Coursework",
+    period: "2023 – 2025",
+    skills: ["PostgreSQL", "SQL Server", "Complex Joins", "Indexing", "Aggregations"],
+    description: "Mastery of database schema normalization, transaction isolation levels, ACID compliance, query execution plans, and multi-database benchmarking."
+  },
+  {
+    id: "cert-python",
+    title: "Python Programming & Algorithmic Tooling",
+    issuer: "Online Technical Certification",
+    period: "2023 – 2024",
+    skills: ["Python 3.12", "Data Structures", "PyMongo", "SQLAlchemy", "Automation"],
+    description: "Deep dive into object-oriented Python, CLI tooling, database drivers, automated synthetic data generation, and telemetry benchmarking engines."
+  },
+  {
+    id: "cert-mongodb",
+    title: "MongoDB & NoSQL Data Modeling",
+    issuer: "MongoDB Technical Curriculum",
+    period: "2024 – 2025",
+    skills: ["MongoDB Atlas", "Mongoose 9", "Aggregation Pipelines", "Atomic Transactions"],
+    description: "Advanced document modeling, native aggregation pipelines for real-time analytics, replica sets, index optimization, and concurrency handling."
+  },
+  {
+    id: "cert-js",
+    title: "Advanced JavaScript & Asynchronous Patterns",
+    issuer: "Online Certification",
+    period: "2023 – 2024",
+    skills: ["ES6+", "Promises/Async-Await", "DOM APIs", "Event Loop", "Closures"],
+    description: "Core JavaScript language mastery, prototypes, asynchronous control flow, web storage, browser extensions, and performance profiling."
+  },
+  {
+    id: "cert-dsa",
+    title: "Data Structures & Algorithms (DSA)",
+    issuer: "UET Lahore / Academic Curriculum",
+    period: "2023 – 2025",
+    skills: ["Trees & Graphs", "Dynamic Programming", "Sorting", "Time/Space Complexity"],
+    description: "Algorithmic problem-solving in C++ and Python covering memory allocation, recursion, graph traversals, greedy approaches, and complexity analysis."
+  }
+];
+
+export const INTERNSHIPS_DATA = [
+  {
+    role: "Full-Stack Software Engineering Intern / Solo Developer",
+    organization: "Shop.co E-Commerce Platform",
+    period: "2024 – Present",
+    location: "Remote / Independent",
+    points: [
+      "Designed and developed a production-ready corporate clothing e-commerce platform using React, TypeScript, Node.js, and MongoDB.",
+      "Engineered cookie-based JWT authentication with refresh token rotation and granular Role-Based Access Control (RBAC).",
+      "Integrated Stripe checkout with cryptographic webhook fulfillment and atomic MongoDB stock transactions.",
+      "Deployed frontend to Vercel and backend microservices to Render container infrastructure."
+    ]
+  },
+  {
+    role: "Lead Cybersecurity Researcher",
+    organization: "Secure Cyber Reconnaissance Project (UET Lahore)",
+    period: "2024",
+    location: "Lahore, Pakistan",
+    points: [
+      "Led the reconnaissance design team focusing on stealth network mapping and attack surface enumeration.",
+      "Engineered an early-warning vulnerability discovery framework using passive OSINT and non-intrusive traffic analysis.",
+      "Reduced simulated network attack surfaces by over 30% in controlled evaluation tests."
+    ]
+  },
+  {
+    role: "Documentation Lead & Research Contributor",
+    organization: "Automated Restaurant Management System",
+    period: "2024",
+    location: "UET Lahore",
+    points: [
+      "Headed technical system architecture documentation and functional requirement gathering.",
+      "Designed normalized SQL schemas for real-time table management, user roles, billing, and order workflows.",
+      "Coordinated with development teams to ensure architectural alignment with software engineering standards."
+    ]
+  },
+  {
+    role: "Event Management Coordinator",
+    organization: "UET ACM Society",
+    period: "2023 – 2025",
+    location: "Lahore, Pakistan",
+    points: [
+      "Coordinated major technical events, coding hackathons, and guest lectures for UET Computer Science students.",
+      "Managed logistics, team scheduling, and cross-departmental communications."
+    ]
+  },
+  {
+    role: "Community Outreach Volunteer",
+    organization: "Kaar-e-Kamal Welfare",
+    period: "2023 – Present",
+    location: "Muridke, Pakistan",
+    points: [
+      "Contributed to educational assistance, youth empowerment programs, and community welfare initiatives."
+    ]
+  }
+];
 
 export const PROJECTS_DATA = [
   {
@@ -47,19 +189,20 @@ export const PROJECTS_DATA = [
   {
     id: "litho-marketplace",
     name: "Litho Template Marketplace",
-    subtitle: "Curated Academic & Technical Document Registry",
+    subtitle: "Curated Academic & Technical Document Registry (FYP)",
     featured: true,
     liveUrl: "https://litho-template-marketplace.onrender.com/Litho-Template-Marketplace/index.html",
     githubUrl: "https://github.com/Abaidullah9/Litho-Template-Marketplace",
     category: "fullstack",
-    tags: ["nextjs", "javascript", "express", "supabase", "postgresql", "docker", "render"],
-    status: "LIVE ON RENDER DOCKER",
+    tags: ["nextjs", "javascript", "express", "supabase", "postgresql", "docker", "render", "fyp"],
+    status: "FINAL YEAR PROJECT (FYP)",
     kind: "Full-Stack Registry & Admin",
     stars: 1,
     forks: 0,
     updated: "2026-10-08",
-    description: "Curated registry for academic and technical document templates (theses, research papers, technical reports, CVs). Features full-text search with token parsing, split-view catalog, multi-theme engine, parametric canvas visualizer, and a secured administrative dashboard.",
+    description: "Curated registry for academic and technical document templates (theses, research papers, technical reports, CVs) part of the Litho Publishing Ecosystem. Features full-text search with token parsing, split-view catalog, multi-theme engine, parametric canvas visualizer, and an administrative dashboard.",
     highlights: [
+      "Final Year Project at UET Lahore (Group 21, supervised by Miss Rimsha)",
       "Next.js 16 App Router architecture paired with Express 5 backend API",
       "Supabase PostgreSQL database with schema migrations and sample seeders",
       "Dual browsing modes: Responsive cards catalog and dual-pane keyboard-navigable split view",
@@ -75,10 +218,10 @@ export const PROJECTS_DATA = [
       deployment: "Docker Container Web Service on Render + GitHub Pages Static Export"
     },
     metrics: {
-      backendComplexity: 90,
-      databaseArchitecture: 88,
-      testCoverage: 82,
-      systemsLogic: 89,
+      backendComplexity: 92,
+      databaseArchitecture: 90,
+      testCoverage: 85,
+      systemsLogic: 94,
       productionReadiness: 96
     }
   },

@@ -2,7 +2,7 @@
  * Interactive Developer Terminal
  */
 
-import { PROJECTS_DATA, PROFILE_INFO } from "../data/projects.js";
+import { PROJECTS_DATA, PROFILE_INFO, FYP_DATA, CERTIFICATIONS_DATA, INTERNSHIPS_DATA } from "../data/projects.js";
 import { showToast } from "./toast.js";
 
 export function initTerminal() {
@@ -19,14 +19,38 @@ export function initTerminal() {
     help: () => `
 Available Commands:
   help              Display this command guide
+  cat fyp           Inspect Final Year Project (Litho Publishing Ecosystem)
   cat resume        Print condensed resume & academic credentials
+  certs             List verified online courses & technical certifications
+  internships       Display professional & academic experience
   projects          List all engineering projects
   projects --live   List only verified live production deployments
   skills            Display full-stack & systems tech stack matrix
   contact           Output direct contact channels (Email, Phone, LinkedIn)
   whoami            Print current visitor identity
-  theme <name>      Change color scheme (dark, light, tokyo, mocha, nord)
+  theme <name>      Change color scheme (dark, light, tokyo, mocha, nord, kanagawa, gruvbox, rose, hackerman)
   clear             Clear terminal screen
+    `,
+
+    "cat fyp": () => `
+================================================================
+FINAL YEAR PROJECT (FYP) — LITHO PUBLISHING ECOSYSTEM
+================================================================
+Title:        ${FYP_DATA.title}
+Institution:  ${FYP_DATA.institution}
+Department:   ${FYP_DATA.department}
+Supervisor:   ${FYP_DATA.supervisor}
+Group:        ${FYP_DATA.group}
+
+Team Members:
+${FYP_DATA.team.map(m => `  • ${m.name} (${m.roll}) — ${m.role}`).join("\n")}
+
+Abaidullah's Direct Ownership:
+${FYP_DATA.abaidullahOwnership.map(o => `  [${o.feature}]
+   ${o.detail}`).join("\n\n")}
+
+Live Marketplace: ${FYP_DATA.liveUrl}
+GitHub Repo:      ${FYP_DATA.githubUrl}
     `,
 
     "cat resume": () => `
@@ -38,7 +62,19 @@ Degree:        ${PROFILE_INFO.education.degree} (${PROFILE_INFO.education.period
 Academic CGPA: ${PROFILE_INFO.education.cgpa}
 Honors:        ${PROFILE_INFO.education.honors}
 Primary Focus: Production MERN/Next.js Web Platforms, Low-Level Compilers & DB Benchmarking
-Download:      Use the 'Resume / CV' button in header or run 'cat resume.pdf'
+Download:      Use the 'Resume / CV' button in header or download /Abaid_Ullah_Resume.pdf
+    `,
+
+    certs: () => `
+Verified Certifications & Technical Coursework (${CERTIFICATIONS_DATA.length}):
+${CERTIFICATIONS_DATA.map((c, i) => `  [${i + 1}] ${c.title.padEnd(46)} | ${c.issuer} (${c.period})
+      Skills: ${c.skills.join(", ")}`).join("\n\n")}
+    `,
+
+    internships: () => `
+Professional & Academic Experience / Internships (${INTERNSHIPS_DATA.length}):
+${INTERNSHIPS_DATA.map((x, i) => `  [${i + 1}] ${x.role} — ${x.organization} (${x.period})
+      ${x.points[0]}`).join("\n\n")}
     `,
 
     projects: () => `
@@ -50,7 +86,7 @@ ${PROJECTS_DATA.map((p, i) => `  [${i + 1}] ${p.name.padEnd(30)} | ${p.kind.padE
 Verified Live Deployments:
   1. Shop.co (Full-Stack E-Commerce):
      ${PROJECTS_DATA[0].liveUrl}
-  2. Litho Template Marketplace (Academic Registry):
+  2. Litho Template Marketplace (Academic Registry - FYP):
      ${PROJECTS_DATA[1].liveUrl}
   3. Attendance Management System (Enterprise Portal):
      ${PROJECTS_DATA[2].liveUrl}
@@ -109,7 +145,13 @@ Direct Contact Channels:
           "tokyo-night": "tokyo-night",
           mocha: "catppuccin",
           catppuccin: "catppuccin",
-          nord: "nord"
+          nord: "nord",
+          kanagawa: "kanagawa",
+          gruvbox: "gruvbox",
+          rose: "rose-pine",
+          "rose-pine": "rose-pine",
+          hackerman: "hackerman",
+          matrix: "hackerman"
         };
         const targetTheme = themeMap[themeArg];
         if (targetTheme) {
@@ -123,7 +165,7 @@ Direct Contact Channels:
         } else {
           const out = document.createElement("div");
           out.style.color = "#ef4444";
-          out.textContent = `Unknown theme '${themeArg}'. Available: dark, light, tokyo, mocha, nord`;
+          out.textContent = `Unknown theme '${themeArg}'. Available: dark, light, tokyo, mocha, nord, kanagawa, gruvbox, rose, hackerman`;
           terminalOutput.appendChild(out);
         }
       } else if (COMMANDS[lowerCmd]) {
