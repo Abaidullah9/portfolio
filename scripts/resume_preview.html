@@ -49,19 +49,32 @@
     margin-bottom: 3px;
   }
   .contact-bar {
-    font-size: 8.6pt;
+    font-size: 8.7pt;
     color: #374151;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-  .contact-bar span {
-    display: inline-flex;
+    flex-direction: column;
     align-items: center;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1.25;
+  }
+  .contact-bar a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contact-bar a:hover {
+    text-decoration: underline;
   }
   .contact-bar .sep {
     color: #9ca3af;
+    font-size: 6.5pt;
   }
 
   .section {
@@ -161,17 +174,20 @@
     <h1>ABAID ULLAH BHATTI</h1>
     <div class="title-sub">Software Engineer • Full-Stack Developer • Backend & Systems Specialist</div>
     <div class="contact-bar">
-      <span>Lahore, Pakistan</span>
-      <span class="sep">|</span>
-      <span>+92-327-9399269</span>
-      <span class="sep">|</span>
-      <a href="mailto:abaidullah99999@gmail.com"><strong>abaidullah99999@gmail.com</strong></a>
-      <span class="sep">|</span>
-      <a href="https://abaid-ullah-portfolio.onrender.com"><strong>Portfolio: abaid-ullah-portfolio.onrender.com</strong></a>
-      <span class="sep">|</span>
-      <a href="https://github.com/Abaidullah9">github.com/Abaidullah9</a>
-      <span class="sep">|</span>
-      <a href="https://linkedin.com/in/abaidullah-bhatti-579b98290">linkedin.com/in/abaidullah-bhatti</a>
+      <div class="contact-row">
+        <span>Lahore, Pakistan</span>
+        <span class="sep">●</span>
+        <span>+92-327-9399269</span>
+        <span class="sep">●</span>
+        <a href="mailto:abaidullah99999@gmail.com">abaidullah99999@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <a href="https://abaid-ullah-portfolio.onrender.com">Portfolio: abaid-ullah-portfolio.onrender.com</a>
+        <span class="sep">●</span>
+        <a href="https://github.com/Abaidullah9">GitHub: github.com/Abaidullah9</a>
+        <span class="sep">●</span>
+        <a href="https://linkedin.com/in/abaidullah-bhatti-579b98290">LinkedIn: in/abaidullah-bhatti</a>
+      </div>
     </div>
   </header>
 
