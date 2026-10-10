@@ -270,11 +270,23 @@ export function initCatalog() {
     }
 
     if (mode === "cards") {
-      pluginGrid.hidden = false;
-      catalogSplit.hidden = true;
+      if (pluginGrid) {
+        pluginGrid.hidden = false;
+        pluginGrid.style.display = "";
+      }
+      if (catalogSplit) {
+        catalogSplit.hidden = true;
+        catalogSplit.style.display = "none";
+      }
     } else {
-      pluginGrid.hidden = true;
-      catalogSplit.hidden = false;
+      if (pluginGrid) {
+        pluginGrid.hidden = true;
+        pluginGrid.style.display = "none";
+      }
+      if (catalogSplit) {
+        catalogSplit.hidden = false;
+        catalogSplit.style.display = "grid";
+      }
     }
     render();
   }
@@ -383,11 +395,19 @@ export function initCatalog() {
       pluginCount.textContent = `${projects.length}`;
     }
 
-    if (currentView === "cards") {
-      renderCards(projects);
-    } else {
-      renderSplit(projects);
-    }
+    // Always render both views so split view is never empty
+    renderCards(projects);
+    renderSplit(projects);
+  }
+
+  // Initial display setup
+  if (catalogSplit) {
+    catalogSplit.hidden = true;
+    catalogSplit.style.display = "none";
+  }
+  if (pluginGrid) {
+    pluginGrid.hidden = false;
+    pluginGrid.style.display = "";
   }
 
   // Initial render

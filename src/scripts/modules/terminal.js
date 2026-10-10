@@ -3,7 +3,6 @@
  */
 
 import { PROJECTS_DATA, PROFILE_INFO, FYP_DATA, CERTIFICATIONS_DATA, INTERNSHIPS_DATA } from "../data/projects.js";
-import { showToast } from "./toast.js";
 
 export function initTerminal() {
   const terminalBody = document.getElementById("terminal-body");
@@ -38,9 +37,7 @@ FINAL YEAR PROJECT (FYP) — LITHO PUBLISHING ECOSYSTEM
 ================================================================
 Title:        ${FYP_DATA.title}
 Institution:  ${FYP_DATA.institution}
-Department:   ${FYP_DATA.department}
-Supervisor:   ${FYP_DATA.supervisor}
-Group:        ${FYP_DATA.group}
+Degree:       ${FYP_DATA.degree || 'BS Computer Science (2023–2027)'}
 
 Team Members:
 ${FYP_DATA.team.map(m => `  • ${m.name} (${m.roll}) — ${m.role}`).join("\n")}
@@ -161,7 +158,6 @@ Direct Contact Channels:
           out.style.color = "var(--stable)";
           out.textContent = `Theme updated to '${targetTheme}'.`;
           terminalOutput.appendChild(out);
-          showToast(`Theme switched to ${targetTheme}`);
         } else {
           const out = document.createElement("div");
           out.style.color = "#ef4444";

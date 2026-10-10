@@ -7,8 +7,7 @@ export const FYP_DATA = {
   title: "Litho: Markdown-to-LaTeX Publishing Ecosystem for Reproducible Technical Documents",
   institution: "University of Engineering and Technology (UET), Lahore",
   department: "Department of Computer Science (Session 2023–2027)",
-  group: "Group 21",
-  supervisor: "Miss Rimsha",
+  degree: "BS Computer Science",
   team: [
     { name: "Abaidullah Bhatti", roll: "2023-CS-713", role: "Compiler & LaTeX Backend Engine Lead" },
     { name: "Rabia Nadeem", roll: "2023-CS-705", role: "Grammar Spec, Parser & Metadata Embedding" },
@@ -202,7 +201,7 @@ export const PROJECTS_DATA = [
     updated: "2026-10-08",
     description: "Curated registry for academic and technical document templates (theses, research papers, technical reports, CVs) part of the Litho Publishing Ecosystem. Features full-text search with token parsing, split-view catalog, multi-theme engine, parametric canvas visualizer, and an administrative dashboard.",
     highlights: [
-      "Final Year Project at UET Lahore (Group 21, supervised by Miss Rimsha)",
+      "Final Year Project at UET Lahore",
       "Next.js 16 App Router architecture paired with Express 5 backend API",
       "Supabase PostgreSQL database with schema migrations and sample seeders",
       "Dual browsing modes: Responsive cards catalog and dual-pane keyboard-navigable split view",
@@ -556,7 +555,7 @@ export const PROFILE_INFO = {
   skills: {
     languages: ["TypeScript", "JavaScript (ES6+)", "Python", "C / C++", "x86 Assembly (MASM32)", "SQL"],
     frontend: ["React 18", "Next.js 16 (App Router)", "Vite", "Tailwind CSS", "HTML5 & CSS3", "Responsive UI/UX"],
-    backend: ["Node.js", "Express 5", "ASP.NET Core", "RESTful APIs", "JWT Auth (httpOnly)", "RBAC Permissions"],
+    backend: ["Node.js", "Express 5", "ASP.NET Core", "RESTful APIs", "JWT", "RBAC Permissions"],
     databases: ["MongoDB & Mongoose 9", "PostgreSQL", "SQL Server", "Redis", "SQLite", "Prisma ORM", "Supabase"],
     systems: ["Flex & Bison (LALR Parser)", "Compiler Design (TAC, AST)", "Docker", "Linux / Bash", "Git & GitHub"],
     testing: ["Jest (58 Tests)", "Supertest", "Vitest", "Postman API Testing", "Rate Limiting & Security"]
