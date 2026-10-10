@@ -129,71 +129,76 @@ Direct Contact Channels:
     }
   };
 
+  function runCommand(rawCmd) {
+    if (!rawCmd) return;
+
+    HISTORY.push(rawCmd);
+    historyIndex = HISTORY.length;
+
+    // Echo command
+    const cmdLine = document.createElement("div");
+    cmdLine.innerHTML = `<span style="color: var(--accent); font-weight: bold;">guest@abaid:~$</span> <span>${rawCmd}</span>`;
+    terminalOutput.appendChild(cmdLine);
+
+    const lowerCmd = rawCmd.toLowerCase();
+
+    // Theme command support
+    if (lowerCmd.startsWith("theme ")) {
+      const themeArg = lowerCmd.split(" ")[1];
+      const themeMap = {
+        dark: "dark",
+        light: "light",
+        tokyo: "tokyo-night",
+        "tokyo-night": "tokyo-night",
+        mocha: "catppuccin",
+        catppuccin: "catppuccin",
+        nord: "nord",
+        kanagawa: "kanagawa",
+        gruvbox: "gruvbox",
+        rose: "rose-pine",
+        "rose-pine": "rose-pine",
+        hackerman: "hackerman",
+        matrix: "hackerman"
+      };
+      const targetTheme = themeMap[themeArg];
+      if (targetTheme) {
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        localStorage.setItem("litho-theme", targetTheme);
+        const out = document.createElement("div");
+        out.style.color = "var(--stable)";
+        out.textContent = `Theme updated to '${targetTheme}'.`;
+        terminalOutput.appendChild(out);
+      } else {
+        const out = document.createElement("div");
+        out.style.color = "#ef4444";
+        out.textContent = `Unknown theme '${themeArg}'. Available: dark, light, tokyo, mocha, nord, kanagawa, gruvbox, rose, hackerman`;
+        terminalOutput.appendChild(out);
+      }
+    } else if (COMMANDS[lowerCmd]) {
+      const result = COMMANDS[lowerCmd]();
+      if (result !== null) {
+        const out = document.createElement("pre");
+        out.style.color = "var(--text)";
+        out.style.margin = "6px 0 14px";
+        out.style.whiteSpace = "pre-wrap";
+        out.textContent = result.trim();
+        terminalOutput.appendChild(out);
+      }
+    } else {
+      const out = document.createElement("div");
+      out.style.color = "#ef4444";
+      out.textContent = `Command not recognized: '${rawCmd}'. Type 'help' for available commands.`;
+      terminalOutput.appendChild(out);
+    }
+
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+
   terminalInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       const rawCmd = terminalInput.value.trim();
       terminalInput.value = "";
-      if (!rawCmd) return;
-
-      HISTORY.push(rawCmd);
-      historyIndex = HISTORY.length;
-
-      // Echo command
-      const cmdLine = document.createElement("div");
-      cmdLine.innerHTML = `<span style="color: var(--accent); font-weight: bold;">guest@abaid:~$</span> <span>${rawCmd}</span>`;
-      terminalOutput.appendChild(cmdLine);
-
-      const lowerCmd = rawCmd.toLowerCase();
-
-      // Theme command support
-      if (lowerCmd.startsWith("theme ")) {
-        const themeArg = lowerCmd.split(" ")[1];
-        const themeMap = {
-          dark: "dark",
-          light: "light",
-          tokyo: "tokyo-night",
-          "tokyo-night": "tokyo-night",
-          mocha: "catppuccin",
-          catppuccin: "catppuccin",
-          nord: "nord",
-          kanagawa: "kanagawa",
-          gruvbox: "gruvbox",
-          rose: "rose-pine",
-          "rose-pine": "rose-pine",
-          hackerman: "hackerman",
-          matrix: "hackerman"
-        };
-        const targetTheme = themeMap[themeArg];
-        if (targetTheme) {
-          document.documentElement.setAttribute("data-theme", targetTheme);
-          localStorage.setItem("litho-theme", targetTheme);
-          const out = document.createElement("div");
-          out.style.color = "var(--stable)";
-          out.textContent = `Theme updated to '${targetTheme}'.`;
-          terminalOutput.appendChild(out);
-        } else {
-          const out = document.createElement("div");
-          out.style.color = "#ef4444";
-          out.textContent = `Unknown theme '${themeArg}'. Available: dark, light, tokyo, mocha, nord, kanagawa, gruvbox, rose, hackerman`;
-          terminalOutput.appendChild(out);
-        }
-      } else if (COMMANDS[lowerCmd]) {
-        const result = COMMANDS[lowerCmd]();
-        if (result !== null) {
-          const out = document.createElement("pre");
-          out.style.color = "var(--text)";
-          out.style.margin = "6px 0 14px";
-          out.textContent = result.trim();
-          terminalOutput.appendChild(out);
-        }
-      } else {
-        const out = document.createElement("div");
-        out.style.color = "#ef4444";
-        out.textContent = `Command not recognized: '${rawCmd}'. Type 'help' for available commands.`;
-        terminalOutput.appendChild(out);
-      }
-
-      terminalBody.scrollTop = terminalBody.scrollHeight;
+      runCommand(rawCmd);
     } else if (e.key === "ArrowUp") {
       if (historyIndex > 0) {
         historyIndex--;
@@ -208,5 +213,17 @@ Direct Contact Channels:
         terminalInput.value = "";
       }
     }
+  });
+
+  // Setup Quick Command Chips
+  const quickChips = document.querySelectorAll(".term-chip");
+  quickChips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      const cmd = chip.getAttribute("data-cmd");
+      if (cmd) {
+        terminalInput.value = "";
+        runCommand(cmd);
+      }
+    });
   });
 }

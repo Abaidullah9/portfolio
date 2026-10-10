@@ -188,30 +188,43 @@
     <section class="container">
       <div class="market-hero">
         <div class="market-hero-copy">
-          <div class="page-eyebrow">Curated Engineering Showcase & Systems Registry</div>
-          <h1>engineering scalable web systems & developer tools</h1>
+          <div class="hero-author-badge">
+            <img src="/profile.png" alt="Abaid Ullah Bhatti" class="hero-author-avatar" />
+            <div class="hero-author-meta">
+              <span class="hero-author-name">Abaid Ullah Bhatti</span>
+              <span class="hero-author-sub">Full-Stack Engineer & FYP Lead</span>
+            </div>
+            <div class="hero-author-status" title="Actively interviewing for software engineering positions">
+              <span class="market-support-dot"></span>
+              <span>Open to Work</span>
+            </div>
+          </div>
+
+          <div class="page-eyebrow">Engineering Showcase & Systems Registry</div>
+          <h1>Engineering Scalable Web Systems & Developer Tools</h1>
           <p>
-            Computer Science engineer & full-stack architect studying at <strong>UET Lahore (7th Semester • CGPA 3.351)</strong>. 
-            Compiler & Backend Lead for <strong>Litho (FYP)</strong>, and creator of <strong>Shop.co</strong>. Specializing in production React/Next.js platforms, distributed Express APIs with RBAC, database performance benchmarking suites, and compiler systems.
+            Computer Science engineer studying at <strong>UET Lahore (7th Sem • CGPA 3.351)</strong>. 
+            Compiler Lead on <strong>Litho (FYP)</strong> and architect of <strong>Shop.co</strong>. Specializing in production React/Next.js platforms, distributed Express APIs with RBAC, database performance benchmarking suites, and compiler systems.
           </p>
 
           <div class="market-hero-badges">
-            <div class="hero-pill">FYP: <strong>Litho Publishing Ecosystem Lead</strong></div>
-            <div class="hero-pill">Stack: <strong>React, Next.js, Node.js, Express</strong></div>
-            <div class="hero-pill">Persistence: <strong>PostgreSQL, MongoDB, SQL Server, Redis</strong></div>
-            <div class="hero-pill">Systems: <strong>C++, Tectonic/TeX, MASM32, Docker</strong></div>
-            <div class="hero-pill">Institution: <strong>UET Lahore (7th Sem • CGPA 3.351)</strong></div>
+            <div class="hero-pill">FYP: <strong>Litho Compiler Lead</strong></div>
+            <div class="hero-pill">Stack: <strong>React, Next.js, Express</strong></div>
+            <div class="hero-pill">Databases: <strong>Postgres, MongoDB, Redis</strong></div>
+            <div class="hero-pill">Systems: <strong>C++, Tectonic TeX, Docker</strong></div>
           </div>
 
           <div class="market-hero-actions">
-            <a class="button market-primary" href="#catalog">
-              Browse All Works <span aria-hidden="true">→</span>
-            </a>
-            <a class="button live-btn" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">
-              Shop.co Live Demo <span aria-hidden="true">↗</span>
-            </a>
-            <a class="button publish-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
-              Download CV <span aria-hidden="true">↓</span>
+            <div class="hero-actions-primary-row">
+              <a class="button market-primary" href="#catalog">
+                Browse Works <span aria-hidden="true">→</span>
+              </a>
+              <a class="button live-btn" href="https://shop-co-rust-phi.vercel.app/" target="_blank" rel="noreferrer">
+                Shop.co Demo <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <a class="button publish-primary hero-btn-cv" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">
+              Download ATS Resume PDF <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
@@ -791,6 +804,14 @@
         <div class="terminal-body" id="terminal-body">
           <div class="terminal-output" id="terminal-output">Welcome to Abaid Ullah's Developer Terminal.
 Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspect available commands, or <span style="color: var(--stable); font-weight: bold;">cat resume</span> for educational background.</div>
+          <div class="terminal-quick-chips">
+            <span class="chips-label">Run:</span>
+            <button type="button" class="term-chip" data-cmd="help">help</button>
+            <button type="button" class="term-chip" data-cmd="cat fyp">cat fyp</button>
+            <button type="button" class="term-chip" data-cmd="projects --live">projects --live</button>
+            <button type="button" class="term-chip" data-cmd="skills">skills</button>
+            <button type="button" class="term-chip" data-cmd="cat resume">cat resume</button>
+          </div>
           <div class="terminal-line">
             <span class="terminal-prompt">guest@abaid:~$</span>
             <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type 'help', 'skills', or 'projects'..." />
