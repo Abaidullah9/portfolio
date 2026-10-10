@@ -1266,7 +1266,7 @@ button, input, select, textarea {
 
 /* Certifications & Internships Section */
 .cert-section {
-  padding: 70px 0;
+  padding: 40px 0 48px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1335,7 +1335,7 @@ button, input, select, textarea {
 
 /* Catalog Section (Litho Catalog) */
 .market-catalog {
-  padding: 60px 0 80px;
+  padding: 48px 0 32px;
 }
 
 .catalog-heading {
