@@ -139,7 +139,9 @@ export const THEMES = [
 
 export function initTheme() {
   const toggleBtn = document.getElementById("theme-toggle-btn");
+  const mobileToggleBtn = document.getElementById("mobile-theme-btn");
   const themeLabel = document.getElementById("theme-label");
+  const mobileThemeLabel = document.getElementById("mobile-theme-text");
   const overlay = document.getElementById("theme-picker-overlay");
   const picker = document.getElementById("theme-picker");
   const cardsContainer = document.getElementById("theme-cards-container");
@@ -205,6 +207,7 @@ export function initTheme() {
       overlay.classList.add("open");
       picker.classList.add("open");
       if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "true");
+      if (mobileToggleBtn) mobileToggleBtn.setAttribute("aria-expanded", "true");
     }
   }
 
@@ -213,20 +216,22 @@ export function initTheme() {
       overlay.classList.remove("open");
       picker.classList.remove("open");
       if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "false");
+      if (mobileToggleBtn) mobileToggleBtn.setAttribute("aria-expanded", "false");
     }
   }
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = picker && picker.classList.contains("open");
-      if (isOpen) {
-        closePicker();
-      } else {
-        openPicker();
-      }
-    });
+  function handleToggle(e) {
+    e.stopPropagation();
+    const isOpen = picker && picker.classList.contains("open");
+    if (isOpen) {
+      closePicker();
+    } else {
+      openPicker();
+    }
   }
+
+  if (toggleBtn) toggleBtn.addEventListener("click", handleToggle);
+  if (mobileToggleBtn) mobileToggleBtn.addEventListener("click", handleToggle);
 
   if (closeBtn) closeBtn.addEventListener("click", closePicker);
   if (overlay) overlay.addEventListener("click", closePicker);
@@ -246,8 +251,10 @@ export function initTheme() {
     } catch (e) {}
 
     const found = THEMES.find(t => t.id === valid);
-    if (themeLabel && found) {
-      themeLabel.textContent = found.name.replace("Litho ", "");
+    if (found) {
+      const labelText = found.name.replace("Litho ", "");
+      if (themeLabel) themeLabel.textContent = labelText;
+      if (mobileThemeLabel) mobileThemeLabel.textContent = labelText;
     }
 
     // Update active state in cards

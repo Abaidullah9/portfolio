@@ -45,6 +45,7 @@
         </a>
       </div>
 
+      <!-- Desktop Navigation -->
       <nav class="market-nav" aria-label="Main navigation">
         <div class="market-support-link" title="Open to full-stack & software engineering opportunities">
           <span class="market-support-dot" aria-hidden="true"></span>
@@ -78,8 +79,90 @@
           <span id="theme-label">Theme</span>
         </button>
       </nav>
+
+      <!-- Mobile Right Controls (Visible on mobile/tablet) -->
+      <div class="market-mobile-actions">
+        <button class="theme-toggle mobile-theme-btn" id="mobile-theme-btn" type="button" aria-label="Choose color theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.2 0-1 .9-1.8 2-1.8H17a4 4 0 0 0 4-4c0-4.4-4-7.7-9-7.7Z"/>
+            <circle cx="7.5" cy="11" r="1.3"></circle>
+            <circle cx="10.5" cy="7" r="1.3"></circle>
+            <circle cx="15" cy="7.5" r="1.3"></circle>
+          </svg>
+          <span id="mobile-theme-text">Theme</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Litho Styled Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <div class="mobile-nav-inner">
+        <div class="mobile-nav-badge">
+          <span class="market-support-dot" aria-hidden="true"></span>
+          <span>Open to Full-Stack & Systems Engineering</span>
+        </div>
+
+        <nav class="mobile-nav-menu" aria-label="Mobile Navigation List">
+          <a class="mobile-nav-item" href="#fyp">
+            <span class="mobile-nav-num">01</span>
+            <span class="mobile-nav-text">Capstone FYP (Litho)</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#featured">
+            <span class="mobile-nav-num">02</span>
+            <span class="mobile-nav-text">Featured Deployments</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#catalog">
+            <span class="mobile-nav-num">03</span>
+            <span class="mobile-nav-text">Project Registry (11 Works)</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#experience">
+            <span class="mobile-nav-num">04</span>
+            <span class="mobile-nav-text">Experience & Credentials</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#skills">
+            <span class="mobile-nav-num">05</span>
+            <span class="mobile-nav-text">Technical Skills Matrix</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#terminal">
+            <span class="mobile-nav-num">06</span>
+            <span class="mobile-nav-text">Interactive CLI Terminal</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+          <a class="mobile-nav-item" href="#contact">
+            <span class="mobile-nav-num">07</span>
+            <span class="mobile-nav-text">Contact & Inquiries</span>
+            <span class="mobile-nav-icon">→</span>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-footer">
+          <button type="button" class="button market-primary" id="mobile-resume-trigger">
+            View ATS Resume Online 👁
+          </button>
+          <div style="display: flex; gap: 8px;">
+            <a class="button publish-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer" style="flex: 1; justify-content: center;">
+              Download PDF ↓
+            </a>
+            <a class="button" href="https://github.com/Abaidullah9" target="_blank" rel="noreferrer" style="flex: 1; justify-content: center;">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
 
   <!-- Litho Theme Cards Drawer / Popover Modal -->
   <div class="theme-picker-overlay" id="theme-picker-overlay"></div>
@@ -438,8 +521,8 @@
       </div>
 
       <!-- ATS Resume Showcase Card -->
-      <div style="background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius-md); padding: 20px 24px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-        <div>
+      <div class="resume-showcase-card">
+        <div class="resume-showcase-info">
           <div style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; font-weight: 700;">
             ■ OFFICIAL ATS RESUME & CREDENTIAL DOSSIER
           </div>
@@ -450,7 +533,7 @@
             BS Computer Science, 7th Semester (CGPA: 3.351) • UET Lahore • 11 Engineering Repositories • Full-Stack & Systems Lead
           </p>
         </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="resume-showcase-actions">
           <button type="button" class="button market-primary" onclick="window.openResumeModal()">
             View Resume Online 👁
           </button>
@@ -1040,7 +1123,7 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
 
   <!-- Interactive ATS Resume Viewer Modal -->
   <div class="modal-backdrop" id="resume-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-resume-title">
-    <div class="modal-window" style="max-width: 960px; width: 95%; max-height: 94vh; display: flex; flex-direction: column;">
+    <div class="modal-window modal-resume-window">
       <div class="modal-header" style="flex-shrink: 0;">
         <div>
           <h3 id="modal-resume-title">ABAID ULLAH BHATTI — ATS RESUME</h3>
@@ -1048,7 +1131,7 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
             BS Computer Science (7th Semester • CGPA 3.351) • UET Lahore
           </span>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
+        <div class="modal-resume-actions-top">
           <a class="button market-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer" style="padding: 4px 12px; font-size: 11px;">
             Download PDF ↓
           </a>
@@ -1058,7 +1141,14 @@ Type <span style="color: var(--accent); font-weight: bold;">help</span> to inspe
           <button type="button" class="modal-close" id="resume-modal-close-btn" aria-label="Close resume modal">✕</button>
         </div>
       </div>
-      <div class="modal-content" style="padding: 0; flex: 1; min-height: 600px; overflow: hidden; background: #111;">
+      <div class="modal-content modal-resume-content">
+        <div class="mobile-pdf-notice">
+          <span>Viewing on mobile? If document preview is small, you can open or download directly:</span>
+          <div class="mobile-pdf-notice-actions">
+            <a class="button market-primary" href="/Abaid_Ullah_Resume.pdf" target="_blank" rel="noreferrer">Open Full PDF Tab ↗</a>
+            <a class="button publish-primary" href="/Abaid_Ullah_Resume.pdf" download="Abaid_Ullah_Resume.pdf">Download PDF ↓</a>
+          </div>
+        </div>
         <iframe id="resume-modal-iframe" title="Abaid Ullah Bhatti Resume PDF" style="width: 100%; height: 78vh; border: none; background: #fff;"></iframe>
       </div>
     </div>

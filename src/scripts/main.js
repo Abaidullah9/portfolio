@@ -8,6 +8,7 @@ import { initRayCanvas } from "./modules/ray-canvas.js";
 import { initCatalog } from "./modules/catalog.js";
 import { initProjectModal } from "./modules/modal.js";
 import { initTerminal } from "./modules/terminal.js";
+import { initMobileNav } from "./modules/mobile-nav.js";
 import { showToast } from "./modules/toast.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCatalog();
   initProjectModal();
   initTerminal();
+  initMobileNav();
 
   // Setup Clipboard Copy Buttons
   const copyButtons = document.querySelectorAll("[data-copy]");

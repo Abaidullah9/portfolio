@@ -266,6 +266,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -275,6 +276,9 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -2333,7 +2337,302 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* Responsive Breakpoints */
+.modal-arch-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.modal-footer-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* Mobile Header Tools & Hamburger Toggle */
+.market-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mobile-theme-btn:hover {
+  background: var(--panel-2);
+  color: var(--heading);
+  border-color: var(--accent);
+}
+
+.mobile-theme-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.mobile-menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--panel-2);
+  border-color: var(--line-strong);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 17px;
+  height: 1.5px;
+  background: var(--heading);
+  border-radius: 1px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+}
+
+.mobile-menu-toggle.active {
+  border-color: var(--accent);
+  background: var(--panel-2);
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile Navigation Backdrop & Drawer */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 98;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-nav-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: var(--topbar);
+  left: 0;
+  right: 0;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line-strong);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  z-index: 99;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  max-height: calc(100vh - var(--topbar));
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-inner {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobile-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  width: fit-content;
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+
+.mobile-nav-item:hover, .mobile-nav-item:active {
+  background: var(--panel-hover);
+  border-color: var(--line-strong);
+  color: var(--heading);
+  transform: translateX(2px);
+}
+
+.mobile-nav-num {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.mobile-nav-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+.mobile-nav-icon {
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.mobile-nav-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.mobile-nav-footer .button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ATS Resume Showcase Card */
+.resume-showcase-card {
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.resume-showcase-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.resume-showcase-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ATS Resume Modal Specific Enhancements */
+.modal-resume-window {
+  max-width: 960px;
+  width: 95%;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-resume-actions-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-resume-content {
+  padding: 0;
+  flex: 1;
+  min-height: 550px;
+  overflow: hidden;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-pdf-notice {
+  display: none;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.45;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-pdf-notice-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.mobile-pdf-notice-actions .button {
+  flex: 1;
+  font-size: 11px;
+  padding: 6px 10px;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE RATIOS & MOBILE DESIGN SYSTEM POLISH
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (<= 1024px) */
 @media (max-width: 1024px) {
   .market-hero {
     grid-template-columns: minmax(0, 1fr);
@@ -2352,22 +2651,650 @@ button, input, select, textarea {
   .contact-layout {
     grid-template-columns: minmax(0, 1fr);
   }
+  .gems-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 768px) {
-  .market-nav-link:not(.active):not(.nav-cta) {
+/* Mobile & Tablet Header Transition (<= 860px) */
+@media (max-width: 860px) {
+  .market-nav {
     display: none;
   }
-  .market-hero-copy h1 {
-    font-size: 2.1rem;
+  .market-mobile-actions {
+    display: flex;
   }
-  .catalog-controls {
-    grid-template-columns: minmax(0, 1fr);
+}
+
+/* Primary Mobile Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  /* Fluid Container Ratios */
+  .container {
+    padding-inline: 16px;
+  }
+  .market-header-inner {
+    padding-inline: 16px;
+  }
+
+  /* Polished Vertical Cadence & Rhythm */
+  .market-hero {
+    padding: 36px 0 28px;
+    gap: 24px;
+  }
+  .fyp-section {
+    padding: 38px 0;
+  }
+  .gems-section {
+    padding: 36px 0;
+  }
+  .market-catalog {
+    padding: 36px 0 24px;
+  }
+  .cert-section {
+    padding: 36px 0;
+  }
+  .terminal-section {
+    padding: 36px 0;
+  }
+  .skills-section {
+    padding: 36px 0;
+  }
+  .education-section {
+    padding: 36px 0;
+  }
+  .contact-section {
+    padding: 36px 0 44px;
+  }
+  .market-footer {
+    padding: 32px 0;
+  }
+
+  /* Typography Sizing Ratios */
+  .market-hero-copy h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+  }
+  .market-hero-copy p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .market-section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+  }
+  .market-section-head h2 {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  .recent-head-meta {
+    font-size: 10.5px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .page-eyebrow {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  /* Hero Badges & Buttons */
+  .market-hero-badges {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .hero-pill {
+    padding: 3px 8px;
+    font-size: 10.5px;
+  }
+  .market-hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .market-hero-actions .button {
+    width: 100%;
+    justify-content: center;
+    height: 44px;
+    font-size: 12px;
+  }
+
+  /* Parametric Ray Visualizer Mobile Scope Ratio (16:9 cinematic scope) */
+  .market-hero-ray {
+    aspect-ratio: 16/9;
+    max-height: 200px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .market-hero-ray-hint {
+    font-size: 8px;
+    top: 8px;
+    left: 10px;
+  }
+  .market-hero-ray-label {
+    font-size: 9px;
+    bottom: 8px;
+    right: 10px;
+    padding: 2px 7px;
+  }
+
+  /* FYP Highlight Card Ratios */
+  .fyp-card-highlight {
+    padding: 18px 14px;
+    border-radius: var(--radius-sm);
+  }
+  .fyp-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .fyp-tag-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .fyp-institution {
+    font-size: 10.5px;
+  }
+  .fyp-title {
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
+    line-height: 1.3;
+  }
+  .fyp-subtitle {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .fyp-grid-cols {
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .fyp-ownership-card {
+    padding: 14px 12px;
+  }
+  .fyp-ownership-list li {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+  .fyp-ownership-card .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Card Grids Mobile Proportion (Eliminating 350px/360px overflow bugs) */
+  .gems-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
   .plugin-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Flagship Cards Ratios */
+  .flagship-card {
+    padding: 16px 14px;
+  }
+  .flagship-card h3 {
+    font-size: 1.22rem;
+  }
+  .flagship-subtitle {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .flagship-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .flagship-highlights {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .flagship-highlights li {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .tag-list {
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+  .tech-tag {
+    font-size: 9.5px;
+    padding: 2px 7px;
+  }
+  .flagship-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    padding-top: 14px;
+  }
+  .flagship-actions .button {
+    width: 100%;
+    justify-content: center;
+    height: 42px;
+  }
+
+  /* Catalog Controls & Sizing */
+  .catalog-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .catalog-heading h2 {
+    font-size: 1.4rem;
+  }
+  .catalog-heading-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .catalog-controls {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .search-shortcut {
+    display: none;
+  }
+  .search-input-wrap input {
+    font-size: 13.5px;
+    height: 42px;
+  }
+  .sort-control {
+    width: 100%;
+  }
+  .sort-control select {
+    width: 100%;
+    height: 42px;
+  }
+
+  /* Category Filter Bar — Touch Scrollable Pills */
+  .category-bar {
+    padding: 8px 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: 18px;
+  }
+  .category-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .category-bar > span {
+    display: none;
+  }
+  .category-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+  .cat-pill {
+    white-space: nowrap;
+    font-size: 10.5px;
+    padding: 4px 9px;
+    flex-shrink: 0;
+  }
+  .clear-filters-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+
+  /* Plugin Cards */
+  .plugin-card {
+    padding: 16px 14px;
+  }
+  .plugin-card h4 {
+    font-size: 1.1rem;
+  }
+  .card-subtitle {
+    font-size: 10.5px;
+  }
+  .plugin-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-top: 12px;
+  }
+  .card-links {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+  .card-links .btn-card-action {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+  }
+  .card-actions > .btn-card-action {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+  }
+
+  /* Split View Mobile Optimization */
+  .split-grid {
+    max-height: 320px;
+  }
+  .split-item {
+    padding: 10px 12px;
+  }
+  .split-card {
+    padding: 16px 14px;
+  }
+  .split-stats {
+    padding: 16px 14px;
+  }
+
+  /* Resume Banner Showcase Card */
+  .resume-showcase-card {
+    padding: 16px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .resume-showcase-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .resume-showcase-actions .button {
+    width: 100%;
+    justify-content: center;
+    height: 42px;
+  }
+
+  /* Experience & Certification Cards */
+  .cert-card {
+    padding: 16px 14px;
+  }
+  .cert-card h4 {
+    font-size: 1.1rem;
+  }
+  .cert-org {
+    font-size: 10.5px;
+  }
+  .cert-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .cert-card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Recruiter Terminal */
+  .terminal-header {
+    padding: 8px 12px;
+  }
+  .terminal-title {
+    font-size: 10px;
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .terminal-body {
+    padding: 12px 10px;
+    min-height: 220px;
+    max-height: 280px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .terminal-prompt {
+    font-size: 11px;
+  }
+  .terminal-input {
+    font-size: 14px;
+  }
+
+  /* Skills Matrix Cards */
+  .skill-card {
+    padding: 16px 14px;
+  }
+  .skill-card-head h3 {
+    font-size: 11px;
+  }
+  .skill-item {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* Education Timeline */
+  .timeline {
+    padding-left: 18px;
+  }
+  .timeline-item {
+    padding: 16px 14px;
+  }
+  .timeline-item::before {
+    left: -23px;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+  }
+  .timeline-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .timeline-item h3 {
+    font-size: 1.1rem;
+  }
+  .timeline-date {
+    font-size: 10px;
+  }
+  .timeline-role {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .timeline-item p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  /* Contact Section */
+  .contact-info-card {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+  .contact-link-row {
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .contact-link-label {
+    font-size: 11px;
+  }
+  .contact-link-val {
+    font-size: 11px;
+    word-break: break-all;
+  }
+  .contact-form {
+    padding: 18px 14px;
+    gap: 12px;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .footer-left {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Modals */
+  .modal-backdrop {
+    padding: 10px 8px;
+  }
+  .modal-window {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: var(--radius-sm);
+  }
+  .modal-header {
+    padding: 12px 14px;
+  }
+  .modal-header h3 {
+    font-size: 1.05rem;
+  }
+  .modal-content {
+    padding: 14px 12px;
+  }
+  .modal-arch-dl {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .modal-arch-dl dt {
+    color: var(--accent) !important;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+  .modal-arch-dl dd {
+    font-size: 11.5px;
+    margin-bottom: 4px;
+  }
+  .modal-footer-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  .modal-footer-actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+  .mobile-pdf-notice {
+    display: flex;
+  }
+  .modal-resume-content iframe {
+    height: 60vh !important;
+  }
+
+  /* Theme Picker Popover */
+  .theme-picker {
+    width: calc(100% - 16px);
+    padding: 14px 12px;
+    top: calc(var(--topbar) + 6px);
+    max-height: 82vh;
+  }
+  .theme-picker-head h3 {
+    font-size: 10.5px;
+  }
+  .theme-picker-head span {
+    font-size: 10px;
   }
   .theme-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .theme-card-option {
+    padding: 8px;
+  }
+  .theme-card-preview {
+    height: 58px;
+    margin-bottom: 6px;
+    padding: 4px;
+  }
+  .preview-chip {
+    font-size: 7px;
+    padding: 1px 3px;
+  }
+  .theme-card-title {
+    font-size: 10px;
+  }
+  .theme-card-genre {
+    font-size: 8px;
+  }
+}
+
+/* Extra Tight Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .brand-detail {
+    display: none;
+  }
+  .market-brand-home {
+    font-size: 12px;
+    gap: 8px;
+  }
+  .mobile-theme-text {
+    display: none;
+  }
+  .market-hero-copy h1 {
+    font-size: clamp(1.6rem, 7vw, 1.95rem);
+  }
+  .page-eyebrow {
+    font-size: 9.5px;
+  }
+  .market-hero-badges {
+    gap: 5px;
+  }
+  .hero-pill {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  .theme-card-preview {
+    height: 52px;
+  }
+  .modal-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* Ultra Narrow Devices (<= 360px) */
+@media (max-width: 360px) {
+  .container {
+    padding-inline: 12px;
+  }
+  .market-header-inner {
+    padding-inline: 12px;
+  }
+  .market-hero-copy h1 {
+    font-size: 1.55rem;
+  }
+  .theme-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .fyp-title {
+    font-size: 1.15rem;
+  }
+  .cert-card h4, .flagship-card h3 {
+    font-size: 1.1rem;
   }
 }

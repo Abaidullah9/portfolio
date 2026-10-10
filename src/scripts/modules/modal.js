@@ -119,7 +119,7 @@ export function initProjectModal() {
       architectureHtml = `
         <div style="margin-top: 20px; background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px;">
           <h4 style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Engineering & Stack Architecture</h4>
-          <dl style="display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-family: var(--mono); font-size: 12px;">
+          <dl class="modal-arch-dl">
             ${Object.entries(project.architecture).map(([k, v]) => `
               <dt style="color: var(--faint); text-transform: capitalize;">${k}:</dt>
               <dd style="color: var(--text);">${v}</dd>
@@ -157,7 +157,7 @@ export function initProjectModal() {
 
       ${architectureHtml}
 
-      <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-soft);">
+      <div class="modal-footer-actions">
         ${liveBtnHtml}
         ${githubBtnHtml}
         <button type="button" class="button" onclick="document.getElementById('project-modal-backdrop').classList.remove('open'); document.body.style.overflow = '';">Close</button>
