@@ -38,9 +38,9 @@ const resumeHtml = `<!DOCTYPE html>
   }
   .header {
     text-align: center;
-    margin-bottom: 7px;
+    margin-bottom: 14px;
     border-bottom: 1.5px solid #111827;
-    padding-bottom: 5px;
+    padding-bottom: 9px;
   }
   .header h1 {
     font-size: 19.5pt;
@@ -48,14 +48,14 @@ const resumeHtml = `<!DOCTYPE html>
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #000000;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .header .title-sub {
     font-size: 9.6pt;
     font-weight: 600;
     color: #1f2937;
     letter-spacing: 0.02em;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
   .contact-bar {
     font-size: 8.7pt;
@@ -63,15 +63,15 @@ const resumeHtml = `<!DOCTYPE html>
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
-    margin-top: 2px;
+    gap: 6px;
+    margin-top: 4px;
   }
   .contact-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    line-height: 1.25;
+    gap: 9px;
+    line-height: 1.35;
   }
   .contact-bar a {
     color: #1e3a8a;
